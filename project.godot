@@ -17,7 +17,13 @@ _global_script_class_icons={
 
 config/name="Bits of the Stars"
 config/description="2021 Bit Buckets Build Season Stage 2 Game Project"
+run/main_scene="res://src/Main.tscn"
 config/icon="res://assets/icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
 
 [rendering]
 
