@@ -3,8 +3,8 @@
 [ext_resource path="res://assets/Ship.png" type="Texture" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 16.0
-height = 96.0
+radius = 32.0
+height = 192.0
 
 [node name="Ship" type="KinematicBody2D"]
 
@@ -12,5 +12,5 @@ height = 96.0
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )

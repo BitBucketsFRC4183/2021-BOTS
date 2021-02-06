@@ -6,7 +6,6 @@
 radius = 128.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 40321.0
 
 [node name="Planet" type="KinematicBody2D"]
 
