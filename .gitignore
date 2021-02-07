@@ -13,3 +13,5 @@ data_*/
 .vs/
 
 UpgradeLog.htm
+.DS_Store
+.idea/
