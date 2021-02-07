@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://UpgradeMenus/UpgradeRover.cs" type="Script" id=1]
+[ext_resource path="res://src/UpgradeMenus/UpgradeShip.cs" type="Script" id=1]
 
-[node name="RoverUpgradeMenu" type="MarginContainer"]
+
+[node name="ShipUpgradeMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 0.00012207
@@ -16,11 +17,12 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1920.0
 margin_bottom = 980.0
+rect_min_size = Vector2( 1920, 980 )
 
 [node name="Background" type="ColorRect" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.572549, 0.572549, 0.572549, 1 )
+color = Color( 0.701961, 0.223529, 0.223529, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
