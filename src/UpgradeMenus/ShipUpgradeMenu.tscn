@@ -2,7 +2,6 @@
 
 [ext_resource path="res://src/UpgradeMenus/UpgradeShip.cs" type="Script" id=1]
 
-
 [node name="ShipUpgradeMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0

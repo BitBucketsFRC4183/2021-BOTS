@@ -17,7 +17,7 @@ public class UpgradeMain : MarginContainer
         UpdateButton();
     }
 
-    public void UpdateButton()
+    private void UpdateButton()
     {
         GetNode<Panel>("Panel").GetNode<Button>("SwitchMenu").Text =
             "Show " + (shipMenu.Visible ? "Rover" : "Ship") + " Upgrades";
