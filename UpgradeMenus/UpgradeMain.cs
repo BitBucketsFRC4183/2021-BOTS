@@ -3,19 +3,28 @@ using System;
 
 public class UpgradeMain : MarginContainer
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        ShipMenu().Visible = true;
+        RoverMenu().Visible = false;
+    }
+    
+    public void OnSwitchMenuPressed()
+    {
+        //If the Ship Menu is open, open the Rover Menu and vice versa
+        bool isShipOpen = ShipMenu().Visible;
+
+        ShipMenu().Visible = !isShipOpen;
+        RoverMenu().Visible = isShipOpen;
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    private UpgradeShip ShipMenu()
+    {
+        return GetNode<Panel>("Panel").GetNode<UpgradeShip>("ShipUpgradeMenu");
+    }
+
+    private UpgradeRover RoverMenu()
+    {
+        return GetNode<Panel>("Panel").GetNode<UpgradeRover>("RoverUpgradeMenu");
+    }
 }

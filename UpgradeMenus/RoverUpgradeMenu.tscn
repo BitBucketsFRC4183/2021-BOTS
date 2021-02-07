@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UpgradeMenus/UpgradeRover.cs" type="Script" id=1]
 
 [node name="RoverUpgradeMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -6,6 +8,7 @@ anchor_bottom = 1.0
 margin_right = 0.00012207
 margin_bottom = -99.9999
 rect_min_size = Vector2( 1920, 980 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -13,3 +16,11 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1920.0
 margin_bottom = 980.0
+
+[node name="Background" type="ColorRect" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.572549, 0.572549, 0.572549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

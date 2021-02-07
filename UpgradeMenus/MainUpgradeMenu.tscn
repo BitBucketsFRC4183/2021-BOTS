@@ -8,6 +8,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1920.0
@@ -35,3 +38,5 @@ rect_min_size = Vector2( 0, 100 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="pressed" from="Panel/SwitchMenu" to="." method="OnSwitchMenuPressed"]
