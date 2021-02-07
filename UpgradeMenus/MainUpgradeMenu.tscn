@@ -38,5 +38,4 @@ rect_min_size = Vector2( 0, 100 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="Panel/SwitchMenu" to="." method="OnSwitchMenuPressed"]
