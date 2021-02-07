@@ -1,9 +1,37 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UpgradeMenus/ShipUpgradeMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UpgradeMenus/RoverUpgradeMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UpgradeMenus/UpgradeMain.cs" type="Script" id=3]
 
 [node name="MainUpgradeMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
+
+[node name="RoverUpgradeMenu" parent="Panel" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1920.0
+margin_bottom = 980.0
+
+[node name="ShipUpgradeMenu" parent="Panel" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1920.0
+margin_bottom = 980.0
+
+[node name="SwitchMenu" type="Button" parent="Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -99.9999
+margin_bottom = 0.00012207
+rect_min_size = Vector2( 0, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

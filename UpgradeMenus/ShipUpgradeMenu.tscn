@@ -10,3 +10,4 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
+rect_min_size = Vector2( 1920, 980 )
