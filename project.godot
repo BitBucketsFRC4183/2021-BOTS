@@ -20,6 +20,10 @@ config/description="2021 Bit Buckets Build Season Stage 2 Game Project"
 run/main_scene="res://src/Main.tscn"
 config/icon="res://assets/project_icon.png"
 
+[autoload]
+
+UpgradeCost="*res://src/Singletons/UpgradeCost.cs"
+
 [display]
 
 window/size/width=1920

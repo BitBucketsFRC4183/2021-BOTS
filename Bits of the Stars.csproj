@@ -3,4 +3,7 @@
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>BitsoftheStars</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\Singletons" />
+  </ItemGroup>
 </Project>

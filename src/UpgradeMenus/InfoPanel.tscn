@@ -13,7 +13,6 @@ margin_right = -1770.0
 margin_bottom = -880.0
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -40,13 +39,34 @@ custom_fonts/font = SubResource( 1 )
 margin_top = 20.0
 margin_right = 150.0
 margin_bottom = 34.0
+step = 1.0
 
 [node name="Resource2" type="ProgressBar" parent="Panel/VBox"]
 margin_top = 38.0
 margin_right = 150.0
 margin_bottom = 52.0
+step = 1.0
 
 [node name="Resource3" type="ProgressBar" parent="Panel/VBox"]
 margin_top = 56.0
 margin_right = 150.0
 margin_bottom = 70.0
+step = 1.0
+
+[node name="Resource4" type="ProgressBar" parent="Panel/VBox"]
+margin_top = 74.0
+margin_right = 150.0
+margin_bottom = 88.0
+step = 1.0
+
+[node name="Resource5" type="ProgressBar" parent="Panel/VBox"]
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 106.0
+step = 1.0
+
+[node name="Resource6" type="ProgressBar" parent="Panel/VBox"]
+margin_top = 110.0
+margin_right = 150.0
+margin_bottom = 124.0
+step = 1.0
