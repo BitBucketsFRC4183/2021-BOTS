@@ -3,8 +3,6 @@
 [ext_resource path="res://src/Space/Missile.cs" type="Script" id=1]
 [ext_resource path="res://assets/Missile.png" type="Texture" id=2]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
 height = 48.0
@@ -13,8 +11,10 @@ height = 48.0
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 2 )
