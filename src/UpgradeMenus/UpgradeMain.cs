@@ -12,9 +12,17 @@ public class UpgradeMain : MarginContainer
         roverMenu = GetNode<Panel>("Panel").GetNode<UpgradeRover>("RoverUpgradeMenu");
 
         shipMenu.Visible = true;
-        this.roverMenu.Visible = false;
+        roverMenu.Visible = false;
+        
+        UpdateButton();
     }
-    
+
+    private void UpdateButton()
+    {
+        GetNode<Panel>("Panel").GetNode<Button>("SwitchMenu").Text =
+            "Show " + (shipMenu.Visible ? "Rover" : "Ship") + " Upgrades";
+    }
+
     public void OnSwitchMenuPressed()
     {
         //If the Ship Menu is open, open the Rover Menu and vice versa
@@ -22,5 +30,7 @@ public class UpgradeMain : MarginContainer
 
         shipMenu.Visible = !isShipOpen;
         roverMenu.Visible = isShipOpen;
+        
+        UpdateButton();
     }
 }
