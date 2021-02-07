@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://stocky.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://depositphotos_198505864-stock-video-night-space-landscape-animation.jpg" type="Texture" id=3]
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 608, 342 )
+region_rect = Rect2( 0, 0, 1920, 1080 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 60
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
 size = 40
 font_data = ExtResource( 2 )
 
@@ -25,7 +27,7 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="TitleContainer" type="VBoxContainer" parent="."]
 margin_right = 1920.0
@@ -36,7 +38,7 @@ alignment = 1
 margin_top = 257.0
 margin_right = 1920.0
 margin_bottom = 319.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Bits of the Stars"
 align = 1
 
@@ -51,6 +53,7 @@ margin_left = 710.0
 margin_right = 1210.0
 margin_bottom = 500.0
 rect_min_size = Vector2( 500, 500 )
+custom_styles/panel = SubResource( 3 )
 
 [node name="MenuButtons" type="VBoxContainer" parent="TitleContainer/CenterContainer/Panel"]
 anchor_top = 0.5
@@ -64,21 +67,22 @@ __meta__ = {
 }
 
 [node name="NewGame" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
+margin_top = 27.0
 margin_right = 500.0
-margin_bottom = 47.0
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 4 )
 text = "New Game"
 
 [node name="Continue" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 51.0
+margin_top = 78.0
 margin_right = 500.0
-margin_bottom = 98.0
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 125.0
+custom_fonts/font = SubResource( 4 )
 text = "Continue"
 
 [node name="Exit" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 102.0
+margin_top = 129.0
 margin_right = 500.0
-margin_bottom = 149.0
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 176.0
+custom_fonts/font = SubResource( 4 )
 text = "Exit"
