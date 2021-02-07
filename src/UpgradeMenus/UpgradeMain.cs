@@ -13,9 +13,11 @@ public class UpgradeMain : MarginContainer
 
         shipMenu.Visible = true;
         roverMenu.Visible = false;
+        
+        UpdateButton();
     }
 
-    public override void _Process(float delta)
+    public void UpdateButton()
     {
         GetNode<Panel>("Panel").GetNode<Button>("SwitchMenu").Text =
             "Show " + (shipMenu.Visible ? "Rover" : "Ship") + " Upgrades";
@@ -28,5 +30,7 @@ public class UpgradeMain : MarginContainer
 
         shipMenu.Visible = !isShipOpen;
         roverMenu.Visible = isShipOpen;
+        
+        UpdateButton();
     }
 }
