@@ -8,19 +8,19 @@ public class UpgradeMain : MarginContainer
     
     public override void _Ready()
     {
-        this.shipMenu = GetNode<Panel>("Panel").GetNode<UpgradeShip>("ShipUpgradeMenu");
-        this.roverMenu = GetNode<Panel>("Panel").GetNode<UpgradeRover>("RoverUpgradeMenu");
+        shipMenu = GetNode<Panel>("Panel").GetNode<UpgradeShip>("ShipUpgradeMenu");
+        roverMenu = GetNode<Panel>("Panel").GetNode<UpgradeRover>("RoverUpgradeMenu");
 
-        this.shipMenu.Visible = true;
+        shipMenu.Visible = true;
         this.roverMenu.Visible = false;
     }
     
     public void OnSwitchMenuPressed()
     {
         //If the Ship Menu is open, open the Rover Menu and vice versa
-        bool isShipOpen = this.shipMenu.Visible;
+        bool isShipOpen = shipMenu.Visible;
 
-        this.shipMenu.Visible = !isShipOpen;
-        this.roverMenu.Visible = isShipOpen;
+        shipMenu.Visible = !isShipOpen;
+        roverMenu.Visible = isShipOpen;
     }
 }
