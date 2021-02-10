@@ -1,7 +1,4 @@
-using Godot;
-using System;
-
-public class Enums : Node
+public class Enums
 {
     public enum GameResources {
         Graprofium,
@@ -11,4 +8,5 @@ public class Enums : Node
         Xerocrium,
         Coopertonium
     }
+
 }

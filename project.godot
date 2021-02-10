@@ -23,7 +23,6 @@ config/icon="res://assets/project_icon.png"
 [autoload]
 
 PlayerData="*res://src/Singletons/PlayerData.cs"
-Enums="*res://src/Singletons/Enums.cs"
 Signals="*res://src/Singletons/Signals.cs"
 
 [display]
