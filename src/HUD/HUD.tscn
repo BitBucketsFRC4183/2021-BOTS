@@ -14,6 +14,8 @@ __meta__ = {
 [node name="ResourceCollectBar" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.174
 anchor_bottom = 0.073
-margin_right = 334.92
-margin_bottom = 79.16
+margin_left = 835.61
+margin_top = 926.379
+margin_right = 1170.53
+margin_bottom = 1005.54
 rect_scale = Vector2( 0.5, 0.5 )

@@ -233,7 +233,3 @@ type = 5
 amount = 5
 
 [node name="HUD" parent="." instance=ExtResource( 18 )]
-margin_left = 735.47
-margin_top = 987.947
-margin_right = 735.47
-margin_bottom = 987.947
