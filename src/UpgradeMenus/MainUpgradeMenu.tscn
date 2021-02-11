@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://UpgradeMenus/ShipUpgradeMenu.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UpgradeMenus/RoverUpgradeMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UpgradeMenus/UpgradeMain.cs" type="Script" id=3]
+[ext_resource path="res://src/UpgradeMenus/ShipUpgradeMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UpgradeMenus/RoverUpgradeMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/Orbitron Medium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://src/UpgradeMenus/UpgradeMain.cs" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 3 )
 
 [node name="MainUpgradeMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,8 +40,9 @@ anchor_bottom = 1.0
 margin_top = -99.9999
 margin_bottom = 0.00012207
 rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 2 )
+text = "DEFAULT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="Panel/SwitchMenu" to="." method="OnSwitchMenuPressed"]
