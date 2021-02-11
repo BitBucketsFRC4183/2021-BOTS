@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/spacekit/Isometric/rover_SW.png" type="Texture" id=1]
-[ext_resource path="res://src/Planet/Player.cs" type="Script" id=2]
+[ext_resource path="res://src/Player.cs" type="Script" id=2]
 [ext_resource path="res://assets/spacekit/Isometric/rover_SE.png" type="Texture" id=3]
 [ext_resource path="res://assets/spacekit/Isometric/rover_NW.png" type="Texture" id=4]
 [ext_resource path="res://assets/spacekit/Isometric/rover_NE.png" type="Texture" id=5]
