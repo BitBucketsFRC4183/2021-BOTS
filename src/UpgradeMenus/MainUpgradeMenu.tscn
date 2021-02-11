@@ -34,11 +34,9 @@ margin_right = 1920.0
 margin_bottom = 980.0
 
 [node name="SwitchMenu" type="Button" parent="Panel"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -99.9999
-margin_bottom = 0.00012207
+margin_top = 980.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 rect_min_size = Vector2( 0, 100 )
 custom_fonts/font = SubResource( 1 )
 text = "DEFAULT"
