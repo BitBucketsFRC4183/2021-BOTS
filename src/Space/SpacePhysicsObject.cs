@@ -15,6 +15,12 @@ public class SpacePhysicsObject : KinematicBody2D
     {
 
     }
+
+    public void OnCollision()
+    {
+
+    }
+
     public void AddForce(float direction, float amount)
     {
 
