@@ -58,9 +58,11 @@ public class Player : KinematicBody2D
 
     void _on_ResourceCollectTimer_timeout() {
         GD.Print("finished!");
-        PlayerData.Instance.resources[resource.type] += resource.amount;
-        resource.QueueFree();
-        resource = null;
+        if (resource != null) {
+            PlayerData.Instance.resources[resource.type] += resource.amount;
+            resource.QueueFree();
+            resource = null;
+        }
     }
     
     
