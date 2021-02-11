@@ -3,5 +3,5 @@ using System;
 
 public interface SpaceDamagable
 {
-    void hit();
+    void Hit();
 }

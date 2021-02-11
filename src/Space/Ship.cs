@@ -14,6 +14,14 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
 
     public bool CanLaserFire = true;
 
+
+    public enum Weapon
+    {
+        Missile,
+        Laser,
+        Railgun
+    }
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -25,27 +33,27 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
     {
         // AddForce(Direction, Speed);
     }
-    public void FireWeapon(Node2D target, string weapon)
+    public void FireWeapon(Node2D target, Weapon weapon)
     {
-        if (weapon == "Missile")
+        if (weapon == Weapon.Missile)
         {
             // fire missile
         }
-        else if (weapon == "Laser")
+        else if (weapon == Weapon.Laser)
         {
             if (target is SpaceDamagable damagable)
             {
-                damagable.hit();
+                damagable.Hit();
                 CanLaserFire = false;
             }
         }
-        else if (weapon == "Railgun")
+        else if (weapon == Weapon.Railgun)
         {
             // fire rail
         }
     }
 
-    public void hit()
+    public void Hit()
     {
         if (ShieldStrength > 0)
         {

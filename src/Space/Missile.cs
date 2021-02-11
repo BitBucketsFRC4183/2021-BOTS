@@ -3,7 +3,7 @@ using System;
 
 public class Missile : SpaceProjectile, SpaceDamagable
 {
-    public void hit()
+    public void Hit()
     {
         Destroyed = true;
         QueueFree();
