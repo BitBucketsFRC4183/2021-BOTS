@@ -17,11 +17,13 @@ _global_script_class_icons={
 
 config/name="Bits of the Stars"
 config/description="2021 Bit Buckets Build Season Stage 2 Game Project"
-run/main_scene="res://src/Main.tscn"
+run/main_scene="res://src/Planet/Planet.tscn"
 config/icon="res://assets/project_icon.png"
 
 [autoload]
 
+PlayerData="*res://src/Singletons/PlayerData.cs"
+Signals="*res://src/Singletons/Signals.cs"
 UpgradeCost="*res://src/Singletons/UpgradeCost.cs"
 
 [display]
@@ -55,6 +57,22 @@ player_right={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
  ]
 }
+resource_collect={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="building"
+2d_physics/layer_2="player"
+2d_physics/layer_3="resource"
+2d_physics/layer_4="spaceship"
+2d_physics/layer_5="aliens"
+2d_physics/layer_6="laser"
+2d_physics/layer_7="missile"
+2d_physics/layer_8="space planet"
 
 [physics]
 
