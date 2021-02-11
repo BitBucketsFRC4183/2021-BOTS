@@ -3,7 +3,7 @@ using System;
 
 public class Missile : SpaceProjectile, SpaceDamagable
 {
-    public bool Homing;
+    public bool Homing = false;
     public float Acceleration = 100f;
     public float rotationDeadband = 0.3f;
     public float rotationSpeed = 30f;
