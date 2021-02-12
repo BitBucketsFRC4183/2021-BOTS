@@ -8,11 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[  ]
-_global_script_class_icons={
-
-}
-
 [application]
 
 config/name="Bits of the Stars"
@@ -69,9 +64,8 @@ resource_collect={
 2d_physics/layer_3="resource"
 2d_physics/layer_4="spaceship"
 2d_physics/layer_5="aliens"
-2d_physics/layer_6="laser"
-2d_physics/layer_7="missile"
-2d_physics/layer_8="space planet"
+2d_physics/layer_6="weapon-laser"
+2d_physics/layer_7="weapon-missile"
 
 [physics]
 

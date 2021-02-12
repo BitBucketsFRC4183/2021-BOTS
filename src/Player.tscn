@@ -8,9 +8,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "NW",
+"name": "SW",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -23,9 +23,9 @@ animations = [ {
 "name": "NE",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "SW",
+"name": "NW",
 "speed": 5.0
 } ]
 
@@ -49,4 +49,5 @@ shape = SubResource( 2 )
 [node name="ResourceCollectTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
 [connection signal="timeout" from="ResourceCollectTimer" to="." method="_on_ResourceCollectTimer_timeout"]
