@@ -91,7 +91,7 @@
 [ext_resource path="res://assets/spacekit/Isometric/rocket_topA_NE.png" type="Texture" id=89]
 [ext_resource path="res://src/HUD/HUD.tscn" type="PackedScene" id=90]
 
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=1]
 0/name = "rocket_baseA_NE"
 0/texture = ExtResource( 83 )
 0/tex_offset = Vector2( 0, 0 )
@@ -653,7 +653,7 @@
 39/shapes = [  ]
 39/z_index = 0
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=2]
 resource_local_to_scene = true
 0/name = "rocks_smallA_NE"
 0/texture = ExtResource( 47 )
@@ -1204,7 +1204,7 @@ tile_data = PoolIntArray( -524272, 13, 0, -524271, 15, 0, -524270, 15, 0, -52426
 
 [node name="Rocket" type="TileMap" parent="Rockets"]
 mode = 1
-tile_set = SubResource( 2 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 128, 64 )
 centered_textures = true
 collision_layer = 8
@@ -1274,7 +1274,7 @@ tile_data = PoolIntArray( -786418, 36, 0 )
 
 [node name="SmallRocks" type="TileMap" parent="."]
 mode = 1
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 128, 64 )
 centered_textures = true
 collision_layer = 0
@@ -1358,4 +1358,4 @@ position = Vector2( 1480.44, 460.595 )
 type = 5
 amount = 5
 
-[node name="HUD" parent="." instance=ExtResource( 18 )]
+[node name="HUD" parent="." instance=ExtResource( 90 )]
