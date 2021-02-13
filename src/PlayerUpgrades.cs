@@ -11,7 +11,7 @@ public class PlayerUpgrades
     public Dictionary<ShipUpgrades, string[]> ShipTechInfo;
 
     public Dictionary<RoverUpgrades, UpgradeCost[]> RoverTechCosts;
-    public Dictionary<RoverUpgrades, UpgradeCost[]> ShipTechCosts;
+    public Dictionary<ShipUpgrades, UpgradeCost[]> ShipTechCosts;
 
     //TODO: Ship Tech is NYI
     public PlayerUpgrades()
@@ -24,7 +24,7 @@ public class PlayerUpgrades
         ShipTechInfo = new Dictionary<ShipUpgrades, string[]>();
 
         RoverTechCosts = new Dictionary<RoverUpgrades, UpgradeCost[]>();
-        ShipTechCosts = new Dictionary<RoverUpgrades, UpgradeCost[]>();
+        ShipTechCosts = new Dictionary<ShipUpgrades, UpgradeCost[]>();
         
         //Init Upgrade Tiers
         RoverTech.Add(RoverUpgrades.SPEED, 0);

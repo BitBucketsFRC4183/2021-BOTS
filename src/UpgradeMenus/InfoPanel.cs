@@ -50,7 +50,7 @@ public class InfoPanel : Control
         if (!roverUpgrade.Equals(PlayerUpgrades.RoverUpgrades.NULL))
         {
             level = u.RoverTech[roverUpgrade];
-            cost = u.RoverTechCosts[roverUpgrade][level];
+            cost = u.RoverTechCosts[roverUpgrade][level + 1];
             
             name.Text = u.RoverTechInfo[roverUpgrade][level + 1];
 
@@ -83,7 +83,36 @@ public class InfoPanel : Control
 
     public void OnUpgradeButtonPressed()
     {
-        //Check if the upgrade can be done
+        var r = PlayerData.Instance.resources;
+        var u = PlayerData.Instance.upgrades;
+        var c = roverUpgrade != PlayerUpgrades.RoverUpgrades.NULL ? u.RoverTechCosts[roverUpgrade][u.RoverTech[roverUpgrade] + 1] : u.ShipTechCosts[shipUpgrade][u.ShipTech[shipUpgrade] + 1];
+
+        var res = new[]
+        {
+            Enums.GameResources.Graprofium, Enums.GameResources.Kamenium, Enums.GameResources.Wooflowium,
+            Enums.GameResources.Efarcium, Enums.GameResources.Xerocrium, Enums.GameResources.Coopertonium
+        };
         
+        //Check if the upgrade can be done (if not, return)
+        for (int i = 0; i < UpgradeCost.NumResourceTypes; i++)
+        {
+            if (c.Costs[i] != 0 && r[res[i]] < c.Costs[i]) return;
+        }
+        GD.Print("Player has enough resources!");
+        
+        //Change the player's tech level
+        if (isRover()) u.UpgradeRover(roverUpgrade);
+        else u.UpgradeShip(shipUpgrade);
+        
+        //Deplete player's resources
+        for (int i = 0; i < UpgradeCost.NumResourceTypes; i++) r[res[i]] -= c.Costs[i];
+        
+        //Update the upgrade scenes
+        Signals.PublishUpgradesChangedEvent();
+    }
+
+    private bool isRover()
+    {
+        return roverUpgrade != PlayerUpgrades.RoverUpgrades.NULL;
     }
 }
