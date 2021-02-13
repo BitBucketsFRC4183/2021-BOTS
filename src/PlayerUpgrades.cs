@@ -9,24 +9,44 @@ public class PlayerUpgrades
 
     public Dictionary<RoverUpgrades, string[]> RoverTechInfo;
 
+    public Dictionary<RoverUpgrades, UpgradeCost[]> RoverTechCosts;
+
     //TODO: Ship Tech is NYI
     public PlayerUpgrades()
     {
+        //Init Dictionaries
         RoverTech = new Dictionary<RoverUpgrades, int>();
         ShipTech = new Dictionary<ShipUpgrades, int>();
 
         RoverTechInfo = new Dictionary<RoverUpgrades, string[]>();
 
+        //Init Upgrade Tiers
         RoverTech.Add(RoverUpgrades.SPEED, 0);
         RoverTech.Add(RoverUpgrades.TANK, 0);
         RoverTech.Add(RoverUpgrades.REGEN, 0);
         RoverTech.Add(RoverUpgrades.INVENTORY, 0);
-
+        
+        //Init Info
         //TODO: Better names lol
         RoverTechInfo.Add(RoverUpgrades.SPEED, new[]{"Rover Speed T1", "Rover Speed T2", "Rover Speed T3"});
         RoverTechInfo.Add(RoverUpgrades.TANK, new[]{"Rover Tank T1", "Rover Tank T2", "Rover Tank T3"});
         RoverTechInfo.Add(RoverUpgrades.REGEN, new[]{"Rover Fluid Regeneration T1", "Rover Fluid Regeneration T2", "Rover Fluid Regeneration T3"});
         RoverTechInfo.Add(RoverUpgrades.INVENTORY, new[]{"Rover Inventory T1", "Rover Inventory T2", "Rover Inventory T3"});
+        
+        //Init Costs
+        //TODO: Balancing
+        RoverTechCosts.Add(RoverUpgrades.SPEED, new[]{new UpgradeCost(), new UpgradeCost(), new UpgradeCost()});
+        RoverTechCosts.Add(RoverUpgrades.TANK, new[]{new UpgradeCost(), new UpgradeCost(), new UpgradeCost()});
+        RoverTechCosts.Add(RoverUpgrades.REGEN, new[]{new UpgradeCost(), new UpgradeCost(), new UpgradeCost()});
+        RoverTechCosts.Add(RoverUpgrades.INVENTORY, new[]{new UpgradeCost(), new UpgradeCost(), new UpgradeCost()});
+    }
+
+    public UpgradeCost GetRoverTechCost(RoverUpgrades u)
+    {
+        switch(u)
+        {
+            case RoverUpgrades.SPEED: 
+        }
     }
 
     public void UpgradeRover(RoverUpgrades u)
