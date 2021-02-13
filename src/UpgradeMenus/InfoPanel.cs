@@ -47,7 +47,7 @@ public class InfoPanel : Control
         int level;
         UpgradeCost cost;
 
-        if (!roverUpgrade.Equals(PlayerUpgrades.RoverUpgrades.NULL))
+        if (isRover())
         {
             level = u.RoverTech[roverUpgrade];
             cost = u.RoverTechCosts[roverUpgrade][level + 1];
@@ -74,7 +74,7 @@ public class InfoPanel : Control
                 }
             }
         }
-        else if(!shipUpgrade.Equals(PlayerUpgrades.ShipUpgrades.NULL))
+        else if(!isRover())
         {
             
         }
@@ -85,7 +85,7 @@ public class InfoPanel : Control
     {
         var r = PlayerData.Instance.resources;
         var u = PlayerData.Instance.upgrades;
-        var c = roverUpgrade != PlayerUpgrades.RoverUpgrades.NULL ? u.RoverTechCosts[roverUpgrade][u.RoverTech[roverUpgrade] + 1] : u.ShipTechCosts[shipUpgrade][u.ShipTech[shipUpgrade] + 1];
+        var c = isRover() ? u.RoverTechCosts[roverUpgrade][u.RoverTech[roverUpgrade] + 1] : u.ShipTechCosts[shipUpgrade][u.ShipTech[shipUpgrade] + 1];
 
         var res = new[]
         {
