@@ -1,10 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Space/Ship.cs" type="Script" id=1]
-[ext_resource path="res://assets/Ship.png" type="Texture" id=2]
+[ext_resource path="res://assets/space/Ship.png" type="Texture" id=2]
 [ext_resource path="res://src/Space/ShipCam.cs" type="Script" id=3]
 [ext_resource path="res://src/Space/ZoomoutIcon.cs" type="Script" id=4]
 [ext_resource path="res://assets/ShipIcon.png" type="Texture" id=5]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 32.0
