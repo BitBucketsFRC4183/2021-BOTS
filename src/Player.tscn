@@ -57,4 +57,5 @@ limit_left = 0
 limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
+
 [connection signal="timeout" from="ResourceCollectTimer" to="." method="_on_ResourceCollectTimer_timeout"]
