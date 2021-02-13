@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Missile.png-3063a8d724f84d1e75b41e389883e804.stex"
+path="res://.import/mainscreen_bg.jpg-a4698f836782f4206ba730c30d4395c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Missile.png"
-dest_files=[ "res://.import/Missile.png-3063a8d724f84d1e75b41e389883e804.stex" ]
+source_file="res://assets/mainscreen_bg.jpg"
+dest_files=[ "res://.import/mainscreen_bg.jpg-a4698f836782f4206ba730c30d4395c9.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
