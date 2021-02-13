@@ -5,8 +5,8 @@ public class Missile : SpaceProjectile, SpaceDamagable
 {
     public bool Homing = false;
     public float Acceleration = 100f;
-    public float rotationDeadband = 0.3f;
-    public float rotationSpeed = 30f;
+    public float RotationDeadband = 0.3f;
+    public float RotationSpeed = 30f;
     public Node2D Target;
 
     public void Hit()
