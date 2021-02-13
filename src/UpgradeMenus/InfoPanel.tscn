@@ -16,56 +16,56 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBox" type="VBoxContainer" parent="Panel"]
+[node name="VBox" type="VBoxContainer" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UpgradeName" type="Label" parent="Panel/VBox"]
+[node name="UpgradeName" type="Label" parent="Background/VBox"]
 margin_right = 150.0
 margin_bottom = 16.0
 custom_fonts/font = SubResource( 1 )
 
-[node name="Resource1" type="ProgressBar" parent="Panel/VBox"]
+[node name="Resource1" type="ProgressBar" parent="Background/VBox"]
 margin_top = 20.0
 margin_right = 150.0
 margin_bottom = 34.0
 step = 1.0
 
-[node name="Resource2" type="ProgressBar" parent="Panel/VBox"]
+[node name="Resource2" type="ProgressBar" parent="Background/VBox"]
 margin_top = 38.0
 margin_right = 150.0
 margin_bottom = 52.0
 step = 1.0
 
-[node name="Resource3" type="ProgressBar" parent="Panel/VBox"]
+[node name="Resource3" type="ProgressBar" parent="Background/VBox"]
 margin_top = 56.0
 margin_right = 150.0
 margin_bottom = 70.0
 step = 1.0
 
-[node name="Resource4" type="ProgressBar" parent="Panel/VBox"]
+[node name="Resource4" type="ProgressBar" parent="Background/VBox"]
 margin_top = 74.0
 margin_right = 150.0
 margin_bottom = 88.0
 step = 1.0
 
-[node name="Resource5" type="ProgressBar" parent="Panel/VBox"]
+[node name="Resource5" type="ProgressBar" parent="Background/VBox"]
 margin_top = 92.0
 margin_right = 150.0
 margin_bottom = 106.0
 step = 1.0
 
-[node name="Resource6" type="ProgressBar" parent="Panel/VBox"]
+[node name="Resource6" type="ProgressBar" parent="Background/VBox"]
 margin_top = 110.0
 margin_right = 150.0
 margin_bottom = 124.0

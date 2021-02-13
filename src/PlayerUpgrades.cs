@@ -47,14 +47,6 @@ public class PlayerUpgrades
         RoverTechCosts.Add(RoverUpgrades.INVENTORY, new[]{new UpgradeCost(), new UpgradeCost(), new UpgradeCost()});
     }
 
-    public UpgradeCost GetRoverTechCost(RoverUpgrades u)
-    {
-        switch(u)
-        {
-            case RoverUpgrades.SPEED: 
-        }
-    }
-
     public void UpgradeRover(RoverUpgrades u)
     {
         RoverTech[u]++;
@@ -70,11 +62,13 @@ public class PlayerUpgrades
         SPEED,
         TANK,
         REGEN,
-        INVENTORY
+        INVENTORY,
+        NULL
     }
 
     public enum ShipUpgrades
     {
         //TBD
+        NULL
     }
 }
