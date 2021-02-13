@@ -8,6 +8,16 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "SW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "NE",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "NW",
@@ -16,16 +26,6 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "SE",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "NE",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "SW",
 "speed": 5.0
 } ]
 
@@ -49,4 +49,13 @@ shape = SubResource( 2 )
 [node name="ResourceCollectTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+
 [connection signal="timeout" from="ResourceCollectTimer" to="." method="_on_ResourceCollectTimer_timeout"]
