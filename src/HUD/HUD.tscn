@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/HUD/ResourceCollectBar.tscn" type="PackedScene" id=1]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ResourceCollectBar" parent="CanvasLayer" instance=ExtResource( 1 )]
+anchor_right = 0.174
+anchor_bottom = 0.073
+margin_left = 835.61
+margin_top = 926.379
+margin_right = 1170.53
+margin_bottom = 1005.54
+rect_scale = Vector2( 0.5, 0.5 )

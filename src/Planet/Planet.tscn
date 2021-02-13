@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/Main.cs" type="Script" id=1]
 [ext_resource path="res://assets/tilesets/iso_terrain.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/tilesets/iso_rail.tres" type="TileSet" id=15]
 [ext_resource path="res://assets/tilesets/iso_pipe.tres" type="TileSet" id=16]
 [ext_resource path="res://src/Planet/GameResource.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/HUD/HUD.tscn" type="PackedScene" id=18]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -230,3 +231,5 @@ amount = 5
 position = Vector2( 1480.44, 460.595 )
 type = 5
 amount = 5
+
+[node name="HUD" parent="." instance=ExtResource( 18 )]
