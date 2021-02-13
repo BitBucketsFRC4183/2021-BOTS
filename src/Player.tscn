@@ -50,4 +50,12 @@ shape = SubResource( 2 )
 wait_time = 2.0
 one_shot = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+
 [connection signal="timeout" from="ResourceCollectTimer" to="." method="_on_ResourceCollectTimer_timeout"]

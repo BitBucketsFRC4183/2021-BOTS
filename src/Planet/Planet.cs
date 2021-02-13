@@ -14,7 +14,7 @@ public class Planet : Node2D
         CheckChildren(GetChildren());
         
         foreach (TileMap map in tileMaps) {
-            makeTileCollisionShapes(map);
+            MakeTileCollisionShapes(map);
         }
     }
 
@@ -40,7 +40,7 @@ public class Planet : Node2D
 
     }
 
-    void makeTileCollisionShapes(TileMap map) {
+    void MakeTileCollisionShapes(TileMap map) {
         TileSet tileSet = map.TileSet;
 
         foreach (int tileId in tileSet.GetTilesIds()) {
