@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rail.png-972ded7a5d35066136663454b33996d0.stex"
+path="res://.import/Missile.png-e2393a3e0c06484c061868c9e45f09ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Rail.png"
-dest_files=[ "res://.import/Rail.png-972ded7a5d35066136663454b33996d0.stex" ]
+source_file="res://assets/space/Missile.png"
+dest_files=[ "res://.import/Missile.png-e2393a3e0c06484c061868c9e45f09ec.stex" ]
 
 [params]
 
