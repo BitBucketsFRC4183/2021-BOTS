@@ -22,7 +22,7 @@ public class MainMenu : MarginContainer
     //  }
     void OnNewGamePressed()
     {
-        GetTree().ChangeScene("res://src/Space/SpacePlanet.tscn");
+        GetTree().ChangeScene("res://src/Planet/Planet.tscn");
     }
 
     void OnContinuePressed()

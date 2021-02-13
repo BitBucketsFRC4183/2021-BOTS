@@ -69,12 +69,14 @@ __meta__ = {
 }
 
 [node name="NewGame" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
+margin_top = 35.0
 margin_right = 500.0
-margin_bottom = 67.0
+margin_bottom = 102.0
 custom_fonts/font = SubResource( 4 )
 text = "New Game"
 
 [node name="Continue" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
+visible = false
 margin_top = 71.0
 margin_right = 500.0
 margin_bottom = 138.0
@@ -82,11 +84,12 @@ custom_fonts/font = SubResource( 4 )
 text = "Continue"
 
 [node name="Exit" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 142.0
+margin_top = 106.0
 margin_right = 500.0
-margin_bottom = 209.0
+margin_bottom = 173.0
 custom_fonts/font = SubResource( 4 )
 text = "Exit"
+
 [connection signal="pressed" from="TitleContainer/CenterContainer/Panel/MenuButtons/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="TitleContainer/CenterContainer/Panel/MenuButtons/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="TitleContainer/CenterContainer/Panel/MenuButtons/Exit" to="." method="_on_Exit_pressed"]
