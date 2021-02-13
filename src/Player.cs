@@ -10,7 +10,6 @@ public class Player : KinematicBody2D
     Timer timer;
 
     bool overlappingResource = false;
-    bool collectingResources = false;
     GameResource resource;
 
     public override void _Ready()
@@ -31,27 +30,26 @@ public class Player : KinematicBody2D
     }
     void OnNotOverlappingResource() {
         overlappingResource = false;
-        collectingResources = false;
-        resource = null;
         GD.Print("stopped collecting");
+        resource = null;
         timer.Stop();
+        Signals.Instance.EmitSignal(nameof(Signals.NotCollectingResource));
     }
 
     public override void _UnhandledInput(InputEvent @event)
     {
         if (@event.IsActionPressed("resource_collect")) {
             if (overlappingResource) {
-                collectingResources = true;
-                GD.Print("collecting!");
                 timer.Start();
+                Signals.Instance.EmitSignal(nameof(Signals.CollectingResource));
             }
         }
 
         if (@event.IsActionReleased("resource_collect")) {
-            collectingResources = false;
-            resource = null;
             GD.Print("stopped collecting");
+            resource = null;
             timer.Stop();
+            Signals.Instance.EmitSignal(nameof(Signals.NotCollectingResource));
             
         }
     }
@@ -62,6 +60,7 @@ public class Player : KinematicBody2D
             PlayerData.Instance.resources[resource.type] += resource.amount;
             resource.QueueFree();
             resource = null;
+            Signals.Instance.EmitSignal(nameof(Signals.NotCollectingResource));
         }
     }
     
