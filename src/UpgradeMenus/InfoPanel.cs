@@ -11,7 +11,6 @@ public class InfoPanel : Control
         Signals.UpgradesChanged += UpdatePanel;
         
         UpdatePanel();
-        SetProgressBarResources();
     }
 
     public override void _ExitTree()
