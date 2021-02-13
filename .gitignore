@@ -15,3 +15,5 @@ data_*/
 UpgradeLog.htm
 .DS_Store
 .idea/
+
+*.csproj.old*
