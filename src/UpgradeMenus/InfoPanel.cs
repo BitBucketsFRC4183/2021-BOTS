@@ -22,12 +22,18 @@ public class InfoPanel : Control
     {
         roverUpgrade = r;
         shipUpgrade = PlayerUpgrades.ShipUpgrades.NULL;
+
+        GetNode<Panel>("Background").GetNode<VBoxContainer>("VBox").GetNode<Button>("UpgradeButton").Text =
+            "Upgrade Rover!";
     }
 
     public void SetAsShip(PlayerUpgrades.ShipUpgrades s)
     {
         roverUpgrade = PlayerUpgrades.RoverUpgrades.NULL;
         shipUpgrade = s;
+        
+        GetNode<Panel>("Background").GetNode<VBoxContainer>("VBox").GetNode<Button>("UpgradeButton").Text =
+            "Upgrade Ship!";
     }
 
     public void UpdatePanel()
@@ -73,5 +79,11 @@ public class InfoPanel : Control
             
         }
         else GD.Print("Something broke with upgrade panel");
+    }
+
+    public void OnUpgradeButtonPressed()
+    {
+        //Check if the upgrade can be done
+        
     }
 }
