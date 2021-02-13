@@ -11,7 +11,7 @@ public class Planet : Node2D
     {
         Godot.OS.WindowMaximized = true;
 
-        checkChildren(GetChildren());
+        CheckChildren(GetChildren());
         
         foreach (TileMap map in tileMaps) {
             makeTileCollisionShapes(map);
@@ -26,7 +26,7 @@ public class Planet : Node2D
     // even if the nodes themselves dont have collision layers, polygons will be made
     // they wont collide, but will be made nonetheless
     // to address this, you must make the tileset "Make Unique"
-    void checkChildren(Array children) {
+    void CheckChildren(Array children) {
         foreach (Node child in children) {
             if (child is TileMap) {
                 TileMap tileChild = (TileMap) child;
@@ -34,7 +34,7 @@ public class Planet : Node2D
                     tileMaps.Add(tileChild);
                 }
             } else if (child is Node2D) {
-                checkChildren(child.GetChildren());
+                CheckChildren(child.GetChildren());
             }
         }
 
@@ -46,6 +46,7 @@ public class Planet : Node2D
         foreach (int tileId in tileSet.GetTilesIds()) {
             // Load image and calculate collison polygon
             // https://github.com/godotengine/godot/blob/2abe996414b8b551e69e29461de3ff1bcaf5a28f/editor/plugins/sprite_2d_editor_plugin.cpp#L160
+            // https://github.com/godotengine/godot/blob/2abe996414b8b551e69e29461de3ff1bcaf5a28f/editor/plugins/sprite_2d_editor_plugin.cpp#L255
 
             Image tileImage = tileSet.TileGetTexture(tileId).GetData();
 
