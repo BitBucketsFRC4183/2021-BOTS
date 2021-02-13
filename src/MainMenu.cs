@@ -10,6 +10,8 @@ public class MainMenu : MarginContainer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        Godot.OS.WindowMaximized = true;
+        
         FindNode("NewGame").Connect("pressed", this, nameof(OnNewGamePressed));
         FindNode("Continue").Connect("pressed", this, nameof(OnContinuePressed));
         FindNode("Exit").Connect("pressed", this, nameof(OnExitPressed));
@@ -22,7 +24,7 @@ public class MainMenu : MarginContainer
     //  }
     void OnNewGamePressed()
     {
-        GetTree().ChangeScene("res://src/Space/SpacePlanet.tscn");
+        GetTree().ChangeScene("res://src/Planet/Planet.tscn");
     }
 
     void OnContinuePressed()
