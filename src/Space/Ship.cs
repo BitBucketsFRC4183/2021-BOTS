@@ -4,17 +4,21 @@ using System;
 public class Ship : SpacePhysicsObject, SpaceDamagable
 {
     [Export]
-    public float Fuel;
+    public float Fuel = 100;
     [Export]
-    public float MaxFuel;
+    public float MaxFuel = 100;
     [Export]
-    public float Speed;
+    public float Speed = 50;
+    [Export]
+    public float RotationSpeed = 1f;
     [Export]
     public int ShieldStrength;
     [Export]
-    public bool missileHoming = false;
+    public bool MissileHoming = false;
     [Export]
-    public bool railHoming = false;
+    public bool RailHoming = false;
+
+    public float RotationDeadband = 0.3f;
 
     public float ProjectileEjectionForce = 10;
     public float RailEjectionForce = 100;
@@ -62,10 +66,48 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             targetLockIndicator.Visible = true;
             targetLockIndicator.GlobalPosition = WeaponTarget.GlobalPosition;
         }
+        // Placeholder movement code
+        if (Input.IsActionPressed("player_up"))
+        {
+            if (Fuel > 0)
+            {
+                AddForce(GlobalRotation, Speed * delta);
+                Fuel -= delta;
+            }
+        }
+        // Keep the idea of this though, pressing S makes the ship try to face the opposite direction of it's velocity.
+        if (Input.IsActionPressed("player_down"))
+        {
+            float velocityAngle = -GetAngleTo(Velocity + GlobalPosition);
+            if (Mathf.Abs(velocityAngle) >= RotationDeadband)
+            {
+                if (velocityAngle > 0)
+                {
+                    Rotate(RotationSpeed * delta);
+                }
+                else
+                {
+                    Rotate(-RotationSpeed * delta);
+                }
+            }
+            else
+            {
+                Rotate(velocityAngle);
+            }
+        }
+        if (Input.IsActionPressed("player_left"))
+        {
+            Rotation -= (RotationSpeed * delta);
+        }
+        if (Input.IsActionPressed("player_right"))
+        {
+            Rotation += (RotationSpeed * delta);
+        }
     }
 
     public override void _Input(InputEvent @event)
     {
+        float delta = GetProcessDeltaTime();
         if (Input.IsActionJustPressed("ship_fire_primary"))
         {
             if (WeaponTarget != null)
@@ -99,19 +141,21 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
         if (weapon == Weapon.Missile)
         {
             Missile missile1 = (Missile)MissileScene.Instance();
-            missile1.Homing = missileHoming;
+            missile1.Homing = MissileHoming;
             missile1.Target = target;
             missile1.GlobalRotation = GlobalRotation;
+            missile1.GlobalPosition = GlobalPosition;
             missile1.GlobalPosition += new Vector2(MissileOffset, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(90));
-            missile1.AddForce(Velocity + (new Vector2(1, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(90))), ProjectileEjectionForce);
+            missile1.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(90)), ProjectileEjectionForce);
             GetParent().AddChild(missile1);
 
             Missile missile2 = (Missile)MissileScene.Instance();
-            missile2.Homing = missileHoming;
+            missile2.Homing = MissileHoming;
             missile2.Target = target;
             missile2.GlobalRotation = GlobalRotation;
+            missile2.GlobalPosition = GlobalPosition;
             missile2.GlobalPosition += new Vector2(MissileOffset, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(-90));
-            missile2.AddForce(Velocity + (new Vector2(1, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(-90))), ProjectileEjectionForce);
+            missile2.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(-90)), ProjectileEjectionForce);
             GetParent().AddChild(missile2);
         }
         else if (weapon == Weapon.Laser)
@@ -126,18 +170,19 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
         {
 
             Rail rail = (Rail)RailScene.Instance();
-            rail.PartialHoming = railHoming;
+            rail.PartialHoming = RailHoming;
             if (target != null)
             {
                 rail.Target = target;
                 rail.GlobalRotation = GlobalRotation + GetAngleTo(GetGlobalMousePosition());
-                rail.AddForce(Velocity + (new Vector2(1, 0).Rotated(GlobalRotation + GetAngleTo(GetGlobalMousePosition()))), RailEjectionForce);
+                rail.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + GetAngleTo(GetGlobalMousePosition())), RailEjectionForce);
             }
             else
             {
                 rail.GlobalRotation = GlobalRotation + GetAngleTo(GetGlobalMousePosition());
-                rail.AddForce(Velocity + (new Vector2(1, 0).Rotated(GlobalRotation + GetAngleTo(GetGlobalMousePosition()))), RailEjectionForce);
+                rail.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + GetAngleTo(GetGlobalMousePosition())), RailEjectionForce);
             }
+            rail.GlobalPosition = GlobalPosition;
             GetParent().AddChild(rail);
         }
     }

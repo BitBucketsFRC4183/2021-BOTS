@@ -31,11 +31,11 @@ public class SpacePhysicsObject : KinematicBody2D
         // Placeholder
         Vector2 directionVector = new Vector2(1, 0).Rotated(direction);
 
-        Velocity += directionVector * amount / Mass;
+        Velocity += (directionVector * amount / Mass);
     }
     public void AddForce(Vector2 direction, float amount)
     {
         // Placeholder
-        Velocity += direction * amount / Mass;
+        Velocity += (direction * amount / Mass);
     }
 }
