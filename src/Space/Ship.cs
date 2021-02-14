@@ -92,7 +92,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             }
             else
             {
-                Rotate(velocityAngle);
+                Rotation = -velocityAngle;
             }
         }
         if (Input.IsActionPressed("player_left"))
@@ -146,6 +146,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             missile1.GlobalRotation = GlobalRotation;
             missile1.GlobalPosition = GlobalPosition;
             missile1.GlobalPosition += new Vector2(MissileOffset, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(90));
+            missile1.Velocity = Velocity;
             missile1.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(90)), ProjectileEjectionForce);
             GetParent().AddChild(missile1);
 
@@ -155,6 +156,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             missile2.GlobalRotation = GlobalRotation;
             missile2.GlobalPosition = GlobalPosition;
             missile2.GlobalPosition += new Vector2(MissileOffset, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(-90));
+            missile2.Velocity = Velocity;
             missile2.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(-90)), ProjectileEjectionForce);
             GetParent().AddChild(missile2);
         }
@@ -171,6 +173,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
 
             Rail rail = (Rail)RailScene.Instance();
             rail.PartialHoming = RailHoming;
+            rail.Velocity = Velocity;
             if (target != null)
             {
                 rail.Target = target;

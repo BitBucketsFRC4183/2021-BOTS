@@ -41,7 +41,7 @@ public class Missile : SpaceProjectile, SpaceDamagable
                 }
                 else
                 {
-                    Rotate(targetAngle);
+                    Rotation = targetAngle;
                 }
             }
             AddForce(Rotation, Acceleration * delta);

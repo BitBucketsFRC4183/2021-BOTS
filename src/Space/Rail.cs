@@ -36,7 +36,7 @@ public class Rail : SpaceProjectile, SpaceDamagable
                 }
                 else
                 {
-                    Rotate(targetAngle);
+                    Rotation = targetAngle;
                 }
             }
             AddForce(Rotation, Acceleration * delta);

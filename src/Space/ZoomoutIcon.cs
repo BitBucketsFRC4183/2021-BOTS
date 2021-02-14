@@ -11,6 +11,8 @@ public class ZoomoutIcon : Sprite
     [Export]
     public bool OverrideVisibility = false;
     [Export]
+    public bool OverrideRotation = false;
+    [Export]
     public Vector2 BaseScale = Vector2.One;
 
     public Camera2D ActiveCamera;
@@ -32,7 +34,10 @@ public class ZoomoutIcon : Sprite
             {
                 Visible = true;
             }
-            GlobalRotation = 0;
+            if (!OverrideRotation)
+            {
+                GlobalRotation = 0;
+            }
             Scale = BaseScale * ActiveCamera.Zoom;
         }
         else
