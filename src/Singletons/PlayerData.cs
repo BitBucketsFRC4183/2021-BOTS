@@ -5,7 +5,7 @@ public class PlayerData : Node
 {
     public static PlayerData Instance;
 
-    public PlayerResources resources = new PlayerResources();
+    public InventoryResources resources = new InventoryResources();
     public PlayerUpgrades upgrades = new PlayerUpgrades();
 
     public override void _Ready()
