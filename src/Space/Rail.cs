@@ -4,9 +4,10 @@ using System;
 public class Rail : SpaceProjectile, SpaceDamagable
 {
     public bool PartialHoming = false;
+    public float CruiseVelocity = 1000f;
     public float Acceleration = 100f;
     public float RotationDeadband = 0.3f;
-    public float RotationSpeed = 30f;
+    public float RotationSpeed = 0.3f;
     public Node2D Target;
     public void Hit()
     {
@@ -19,20 +20,26 @@ public class Rail : SpaceProjectile, SpaceDamagable
         base._PhysicsProcess(delta);
         if (PartialHoming)
         {
-            float targetAngle = GetAngleTo(Target.GlobalPosition);
-            if (Mathf.Abs(targetAngle) >= RotationDeadband)
+            if (Target != null)
             {
-                if (targetAngle > 0)
+                float targetAngle = GetAngleTo(Target.GlobalPosition);
+                if (Mathf.Abs(targetAngle) >= RotationDeadband)
                 {
-                    Rotate(-RotationSpeed * delta);
+                    if (targetAngle > 0)
+                    {
+                        Rotate(RotationSpeed * delta);
+                    }
+                    else
+                    {
+                        Rotate(-RotationSpeed * delta);
+                    }
                 }
                 else
                 {
-                    Rotate(RotationSpeed * delta);
+                    Rotate(targetAngle);
                 }
             }
             AddForce(Rotation, Acceleration * delta);
-
         }
     }
 }
