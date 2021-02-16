@@ -113,6 +113,6 @@ public class InfoPanel : Control
 
     private bool isRover()
     {
-        return roverUpgrade != PlayerUpgrades.RoverUpgrades.NULL;
+        return roverUpgrade != Enums.RoverUpgradeType.NULL;
     }
 }

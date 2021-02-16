@@ -39,6 +39,8 @@ public class PlayerData : Node
         {
             resources[r] -= u.Cost[r];
         }
+        
+        Signals.PublishUpgradesChangedEvent();
     }
 
     private Upgrade GetUpgrade(Enums.RoverUpgradeType rover, Enums.ShipUpgradeType ship)
