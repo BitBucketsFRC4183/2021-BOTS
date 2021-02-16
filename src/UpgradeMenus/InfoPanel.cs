@@ -3,6 +3,10 @@ using System;
 
 public class InfoPanel : Control
 {
+    public enum UpgradeType {ROVER, SHIP}
+
+    [Export] public UpgradeType PanelUpgradeType = UpgradeType.ROVER;
+    
     private PlayerUpgrades.RoverUpgrades roverUpgrade;
     private PlayerUpgrades.ShipUpgrades shipUpgrade;
     
