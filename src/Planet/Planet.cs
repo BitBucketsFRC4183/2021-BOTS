@@ -9,8 +9,6 @@ public class Planet : Node2D
 
     public override void _Ready()
     {
-        Godot.OS.WindowMaximized = true;
-
         CheckChildren(GetChildren());
         
         foreach (TileMap map in tileMaps) {

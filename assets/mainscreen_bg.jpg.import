@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ship.png-0df463619a99963c8953a3b0c529008a.stex"
+path="res://.import/mainscreen_bg.jpg-a4698f836782f4206ba730c30d4395c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ship.png"
-dest_files=[ "res://.import/Ship.png-0df463619a99963c8953a3b0c529008a.stex" ]
+source_file="res://assets/mainscreen_bg.jpg"
+dest_files=[ "res://.import/mainscreen_bg.jpg-a4698f836782f4206ba730c30d4395c9.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/depositphotos_198505864-stock-video-night-space-landscape-animation.jpg-dc61f3ef0cf0d316593cc16f83f64fee.stex"
+path="res://.import/star.png-a3c9e6289735b1b3225ac635b4d61382.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://depositphotos_198505864-stock-video-night-space-landscape-animation.jpg"
-dest_files=[ "res://.import/depositphotos_198505864-stock-video-night-space-landscape-animation.jpg-dc61f3ef0cf0d316593cc16f83f64fee.stex" ]
+source_file="res://assets/space/star.png"
+dest_files=[ "res://.import/star.png-a3c9e6289735b1b3225ac635b4d61382.stex" ]
 
 [params]
 
