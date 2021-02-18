@@ -13,7 +13,7 @@ public class MainMenu : MarginContainer
         Godot.OS.WindowMaximized = true;
         
         FindNode("NewGame").Connect("pressed", this, nameof(OnNewGamePressed));
-        FindNode("Continue").Connect("pressed", this, nameof(OnContinuePressed));
+        FindNode("Fullscreen").Connect("pressed", this, nameof(OnFullscreenPressed));
         FindNode("Exit").Connect("pressed", this, nameof(OnExitPressed));
     }
 
@@ -27,9 +27,9 @@ public class MainMenu : MarginContainer
         GetTree().ChangeScene("res://src/Planet/Planet.tscn");
     }
 
-    void OnContinuePressed()
+    void OnFullscreenPressed()
     {
-        //
+        OS.WindowFullscreen = !OS.WindowFullscreen;
     }
 
     void OnExitPressed()
