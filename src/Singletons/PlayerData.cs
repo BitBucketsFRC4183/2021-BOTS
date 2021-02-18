@@ -43,7 +43,7 @@ public class PlayerData : Node
         Signals.PublishUpgradesChangedEvent();
     }
 
-    private Upgrade GetUpgrade(Enums.RoverUpgradeType rover, Enums.ShipUpgradeType ship)
+    public Upgrade GetUpgrade(Enums.RoverUpgradeType rover, Enums.ShipUpgradeType ship)
     {
         Upgrade[] uT = rover != Enums.RoverUpgradeType.NULL ? roverUpgrades[rover] : null;
         Upgrade u = rover != Enums.RoverUpgradeType.NULL ? uT[roverLevels[rover]] : null;
