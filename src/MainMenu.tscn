@@ -1,8 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Rigelstar.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Rigelstar.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/MainMenu.cs" type="Script" id=2]
-[ext_resource path="res://depositphotos_198505864-stock-video-night-space-landscape-animation.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/mainscreen_bg.jpg" type="Texture" id=3]
+
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
@@ -69,12 +70,14 @@ __meta__ = {
 }
 
 [node name="NewGame" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
+margin_top = 35.0
 margin_right = 500.0
-margin_bottom = 67.0
+margin_bottom = 102.0
 custom_fonts/font = SubResource( 4 )
 text = "New Game"
 
 [node name="Continue" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
+visible = false
 margin_top = 71.0
 margin_right = 500.0
 margin_bottom = 138.0
@@ -82,11 +85,8 @@ custom_fonts/font = SubResource( 4 )
 text = "Continue"
 
 [node name="Exit" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 142.0
+margin_top = 106.0
 margin_right = 500.0
-margin_bottom = 209.0
+margin_bottom = 173.0
 custom_fonts/font = SubResource( 4 )
 text = "Exit"
-[connection signal="pressed" from="TitleContainer/CenterContainer/Panel/MenuButtons/NewGame" to="." method="_on_NewGame_pressed"]
-[connection signal="pressed" from="TitleContainer/CenterContainer/Panel/MenuButtons/Continue" to="." method="_on_Continue_pressed"]
-[connection signal="pressed" from="TitleContainer/CenterContainer/Panel/MenuButtons/Exit" to="." method="_on_Exit_pressed"]

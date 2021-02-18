@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/fonts/Orbitron Medium.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/UpgradeMenus/UpgradeMain.cs" type="Script" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 70
 font_data = ExtResource( 3 )
 
@@ -40,9 +40,10 @@ anchor_bottom = 1.0
 margin_top = -99.9999
 margin_bottom = 0.00012207
 rect_min_size = Vector2( 0, 100 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "DEFAULT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Panel/SwitchMenu" to="." method="OnSwitchMenuPressed"]
