@@ -39,10 +39,28 @@ public class InfoPanel : Control
         var name = VBox.GetNode<Label>("UpgradeName");
 
         var resources = new [] {"Graprofium", "Kamenium", "Wooflowium", "Efarcium", "Xerocrium", "Coopertonium"};
+        int level = isRover() ? PlayerData.Instance.roverLevels[roverUpgrade] : -1;
+        var u = isRover() ? PlayerData.Instance.roverUpgrades[roverUpgrade][level] : null;
+        ProgressBar p;
         
         if (isRover())
         {
-            
+            name.Text = u.Name;
+            foreach (Enums.GameResources r in Enum.GetValues(typeof(Enums.GameResources)))
+            {
+                p = VBox.GetNode<ProgressBar>("Resource" + ((int) r + 1));
+
+                if (u.Cost[r] != 0)
+                {
+                    p.MaxValue = u.Cost[r];
+                    p.Step = 1;
+                    p.MinValue = 0;
+                    p.Visible = true;
+                    p.Value = PlayerData.Instance.resources[r] >= u.Cost[r] ? u.Cost[r] : PlayerData.Instance.resources[r];
+                    p.GetNode<Label>("Label").Text = resources[(int) r] + ": " + p.Value + " / " + p.MaxValue;
+                }
+                else p.Visible = false;
+            }
         }
         else if(!isRover())
         {
