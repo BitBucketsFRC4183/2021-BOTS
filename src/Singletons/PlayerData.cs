@@ -22,7 +22,7 @@ public class PlayerData : Node
 
         foreach (Enums.GameResources r in Enum.GetValues(typeof(Enums.GameResources)))
         {
-            if (u.Cost[r] != 0 && resources[r] < u.Cost[r]) return false;
+            if (resources[r] < u.Cost[r]) return false;
         }
 
         return true;
