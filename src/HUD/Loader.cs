@@ -1,5 +1,5 @@
 using Godot;
-using System;
+using System.Threading.Tasks;
 
 public class Loader : Control
 {
@@ -53,11 +53,15 @@ public class Loader : Control
         progress.Value = loadProgress * 100;
     }
 
-    public void setNewScene(PackedScene resource) {
+    async public Task setNewScene(PackedScene resource) {
+        await SceneChanger.Instance.Fade();
+        
         currentScene.QueueFree();
 
         currentScene = resource.Instance();
         Root.AddChild(currentScene);
+
+        await SceneChanger.Instance.ReverseFade();
     }
 
 }
