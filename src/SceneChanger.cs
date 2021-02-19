@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using System.Threading.Tasks;
 
 public class SceneChanger : CanvasLayer
@@ -26,6 +25,14 @@ public class SceneChanger : CanvasLayer
 
     async public void GoToScene(PackedScene scene) {
         await Fade();
+
+        // check if the planet scene is loaded in and remove if it is
+        // because we add it in manually, we need to remove it manually
+        var planetSceneNodes = GetTree().GetNodesInGroup("planet lands");
+        if (planetSceneNodes.Count > 0) {
+            Node node = (Node) planetSceneNodes[0];
+            node.QueueFree();
+        }
 
         GetTree().ChangeSceneTo(scene);
 
