@@ -6,7 +6,7 @@ public class Player : KinematicBody2D
     const int SPEED = 400;
     Vector2 motion = new Vector2();
     
-    AnimatedSprite sprite;
+    AnimationPlayer animPlayer;
     Timer timer;
 
     bool overlappingResource = false;
@@ -14,7 +14,7 @@ public class Player : KinematicBody2D
 
     public override void _Ready()
     {
-        sprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         timer = GetNode<Timer>("ResourceCollectTimer");
         
         Signals.Instance.Connect("OverlappingResource", this, nameof(OnOverlappingResource));
@@ -84,18 +84,18 @@ public class Player : KinematicBody2D
         // to re-add 8-direction, simlpy make all of these "+="
         if (Input.IsActionPressed("player_up")) {
             direction = Vector2.Up; // (0, -1)
-            sprite.Animation = "NE";
+            animPlayer.Play("NE");
         } else if (Input.IsActionPressed("player_down")) {
             direction = Vector2.Down; // (0, 1)
-            sprite.Animation = "SW";
+            animPlayer.Play("SW");
         }
 
         if (Input.IsActionPressed("player_left")) {
             direction = Vector2.Left; // (-1, 0)
-            sprite.Animation = "NW";
+            animPlayer.Play("NW");
         } else if (Input.IsActionPressed("player_right")) {
             direction = Vector2.Right; // (1, 0)
-            sprite.Animation = "SE";
+            animPlayer.Play("SE");
         }
 
         motion = direction.Normalized() * SPEED * delta;
