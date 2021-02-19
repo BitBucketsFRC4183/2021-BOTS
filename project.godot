@@ -19,6 +19,7 @@ config/icon="res://assets/project_icon.png"
 
 PlayerData="*res://src/Singletons/PlayerData.cs"
 Signals="*res://src/Singletons/Signals.cs"
+SceneChanger="*res://src/SceneChanger.tscn"
 
 [display]
 
@@ -78,6 +79,7 @@ space_camera_zoomout={
 2d_physics/layer_5="aliens"
 2d_physics/layer_6="weapon-laser"
 2d_physics/layer_7="weapon-missile"
+2d_physics/layer_8="planet space shuttle"
 
 [physics]
 
