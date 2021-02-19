@@ -1105,7 +1105,9 @@ resource_local_to_scene = true
 31/shapes = [  ]
 31/z_index = 0
 
-[node name="Planet" type="Node2D"]
+[node name="Planet" type="Node2D" groups=[
+"planet lands",
+]]
 script = ExtResource( 1 )
 
 [node name="Tilemaps" type="Node2D" parent="."]
