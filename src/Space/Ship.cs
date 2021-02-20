@@ -37,7 +37,8 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
     [Export]
     public PackedScene RailScene;
     private Sprite targetLockIndicator;
-    private Camera2D ActiveCamera;
+    private Sprite thrusterFlame;
+    private Camera2D activeCamera;
 
     public enum Weapon
     {
@@ -50,7 +51,8 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
     public override void _Ready()
     {
         targetLockIndicator = GetNode<Sprite>("LockIndicator");
-        ActiveCamera = GetNode<Camera2D>("ShipCam");
+        activeCamera = GetNode<Camera2D>("ShipCam");
+        thrusterFlame = GetNode<Sprite>("ThrusterFlame");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,6 +75,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             {
                 AddForce(GlobalRotation, Speed * delta);
                 Fuel -= delta;
+                thrusterFlame.Visible = true;
             }
         }
         // Keep the idea of this though, pressing S makes the ship try to face the opposite direction of it's velocity.
@@ -134,6 +137,10 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
         {
             Godot.Collections.Array lockables = GetTree().GetNodesInGroup("Lockables");
             TryLock(lockables);
+        }
+        if (Input.IsActionJustReleased("player_up"))
+        {
+            thrusterFlame.Visible = false;
         }
     }
     public void FireWeapon(Node2D target, Weapon weapon)
@@ -220,7 +227,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
                 tempTarget = lockable;
             }
         }
-        if (Mathf.Abs(distance.x) > targetLockRadius * ActiveCamera.Zoom.x || Mathf.Abs(distance.y) > targetLockRadius * ActiveCamera.Zoom.y)
+        if (Mathf.Abs(distance.x) > targetLockRadius * activeCamera.Zoom.x || Mathf.Abs(distance.y) > targetLockRadius * activeCamera.Zoom.y)
         {
             WeaponTarget = null;
         }

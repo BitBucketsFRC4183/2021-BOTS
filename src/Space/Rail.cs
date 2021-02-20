@@ -6,7 +6,7 @@ public class Rail : SpaceProjectile, SpaceDamagable
     public bool PartialHoming = false;
     public float CruiseVelocity = 1000f;
     public float Acceleration = 100f;
-    public float RotationDeadband = 0.3f;
+    public float RotationDeadband = 0.1f;
     public float RotationSpeed = 0.3f;
     public Node2D Target;
     public void Hit()
@@ -36,7 +36,7 @@ public class Rail : SpaceProjectile, SpaceDamagable
                 }
                 else
                 {
-                    Rotation = targetAngle;
+                    Rotate(targetAngle);
                 }
             }
             AddForce(Rotation, Acceleration * delta);

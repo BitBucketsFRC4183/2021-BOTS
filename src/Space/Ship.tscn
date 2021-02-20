@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Space/Ship.cs" type="Script" id=1]
 [ext_resource path="res://assets/space/Ship.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Space/Rail.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Space/Missile.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/TargetLockIndicator.png" type="Texture" id=8]
+[ext_resource path="res://assets/trace_05.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 32.0
@@ -58,3 +59,10 @@ MinZoomVisible = 0.0
 MaxZoomVisible = 1e+09
 OverrideVisibility = true
 BaseScale = Vector2( 0.25, 0.25 )
+
+[node name="ThrusterFlame" type="Sprite" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2( -304, 0 )
+rotation = 1.5708
+texture = ExtResource( 9 )

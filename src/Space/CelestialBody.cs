@@ -5,6 +5,8 @@ public class CelestialBody : KinematicBody2D
 {
     [Export]
     public float Gravity = 9.8f;
+    [Export]
+    public Node2D OrbitalParent = null;
 
     public Area2D AreaOfInfluence;
     private Godot.Collections.Array InfluencedBodies;
@@ -33,6 +35,10 @@ public class CelestialBody : KinematicBody2D
 
                 body.AddForce(body.GetAngleTo(GlobalPosition) + body.Rotation, Gravity / (distanceFromBody / (Gravity * 100)) * delta);
             }
+        }
+        if (OrbitalParent != null)
+        {
+
         }
     }
     public void UpdateInfluence(Node body)
