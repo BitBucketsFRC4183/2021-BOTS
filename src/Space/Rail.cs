@@ -4,14 +4,23 @@ using System;
 public class Rail : SpaceProjectile, SpaceDamagable
 {
     public bool PartialHoming = false;
+    public float CruiseVelocity = 1000f;
     public float Acceleration = 100f;
-    public float RotationDeadband = 0.3f;
-    public float RotationSpeed = 30f;
-    public Node2D Target;
+    public float RotationDeadband = 0.1f;
+    public float RotationSpeed = 0.3f;
+    public Destroyable Target;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        if (Target != null)
+        {
+            Target.Destroyed += OnTargetDestroyed;
+        }
+    }
     public void Hit()
     {
-        Destroyed = true;
-        QueueFree();
+        Destroy();
     }
 
     public override void _PhysicsProcess(float delta)
@@ -19,20 +28,34 @@ public class Rail : SpaceProjectile, SpaceDamagable
         base._PhysicsProcess(delta);
         if (PartialHoming)
         {
-            float targetAngle = GetAngleTo(Target.GlobalPosition);
-            if (Mathf.Abs(targetAngle) >= RotationDeadband)
+            if (Target != null)
             {
-                if (targetAngle > 0)
+                float targetAngle = GetAngleTo(Target.GlobalPosition);
+                if (Mathf.Abs(targetAngle) >= RotationDeadband)
                 {
-                    Rotate(-RotationSpeed * delta);
+                    if (targetAngle > 0)
+                    {
+                        Rotate(RotationSpeed * delta);
+                    }
+                    else
+                    {
+                        Rotate(-RotationSpeed * delta);
+                    }
                 }
                 else
                 {
-                    Rotate(RotationSpeed * delta);
+                    Rotate(targetAngle);
                 }
             }
             AddForce(Rotation, Acceleration * delta);
-
         }
+    }
+    public override void OnCollision(Node2D body)
+    {
+        Hit();
+    }
+    private void OnTargetDestroyed()
+    {
+        Target = null;
     }
 }

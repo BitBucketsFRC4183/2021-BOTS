@@ -3,12 +3,13 @@ using System;
 
 public class MainMenu : MarginContainer
 {
-    [Export]
-    NodePath loaderProgressPath;
+    Loader loaderProgress;
 
     public override void _Ready()
     {
         Godot.OS.WindowMaximized = true;
+
+        loaderProgress = GetNode<Loader>("TitleContainer/CenterContainer/MenuButtons/HBoxContainer/Loader");
         
         FindNode("NewGame").Connect("pressed", this, nameof(OnNewGamePressed));
         FindNode("Fullscreen").Connect("pressed", this, nameof(OnFullscreenPressed));
@@ -17,8 +18,8 @@ public class MainMenu : MarginContainer
 
     void OnNewGamePressed()
     {
-        Loader loaderProgress = GetNode<Loader>(loaderProgressPath);
-        loaderProgress.loadPlanet();
+        loaderProgress.loadPlanet("res://src/Planet/Planet.tscn");
+        ((Button) FindNode("NewGame")).Disabled = true;
     }
 
     void OnFullscreenPressed()
@@ -26,8 +27,8 @@ public class MainMenu : MarginContainer
         OS.WindowFullscreen = !OS.WindowFullscreen;
     }
 
-    void OnExitPressed()
-    {
-        GetTree().Quit();
-    }
+	void OnExitPressed()
+	{
+		GetTree().Quit();
+	}
 }

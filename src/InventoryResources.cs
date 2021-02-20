@@ -1,7 +1,7 @@
 using System;
 using static Enums;
 
-public class PlayerResources {
+public class InventoryResources {
 
     public int Graprofium { get; set; } = 0;
     public int Kamenium { get; set; } = 0;
