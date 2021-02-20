@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/UpgradeMenus/UpgradeRover.cs" type="Script" id=1]
+[ext_resource path="res://src/UpgradeMenus/InfoPanel.tscn" type="PackedScene" id=2]
 
 [node name="RoverUpgradeMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -13,14 +14,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 980.0
+color = Color( 0.403922, 0.403922, 0.403922, 1 )
 
-[node name="Background" type="ColorRect" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.572549, 0.572549, 0.572549, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Speed" parent="Background" instance=ExtResource( 2 )]
+margin_left = 235.286
+margin_top = 49.5718
+margin_right = -1534.71
+margin_bottom = -747.428
+rect_scale = Vector2( 2, 2 )
+
+[node name="Tank" parent="Background" instance=ExtResource( 2 )]
+margin_left = 256.027
+margin_top = 513.294
+margin_right = -1513.97
+margin_bottom = -283.706
+rect_scale = Vector2( 2, 2 )
+
+[node name="Regen" parent="Background" instance=ExtResource( 2 )]
+margin_left = 1404.54
+margin_top = 41.2675
+margin_right = -365.459
+margin_bottom = -755.732
+rect_scale = Vector2( 2, 2 )
+
+[node name="Inventory" parent="Background" instance=ExtResource( 2 )]
+margin_left = 1404.93
+margin_top = 506.25
+margin_right = -365.068
+margin_bottom = -290.75
+rect_scale = Vector2( 2, 2 )

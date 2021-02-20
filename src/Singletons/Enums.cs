@@ -9,4 +9,19 @@ public class Enums
         Coopertonium
     }
 
+    public enum RoverUpgradeType
+    {
+        SPEED,
+        TANK,
+        REGEN,
+        INVENTORY,
+        NULL
+    }
+
+    public enum ShipUpgradeType
+    {
+        SHIELDS,
+        NULL
+    }
+
 }
