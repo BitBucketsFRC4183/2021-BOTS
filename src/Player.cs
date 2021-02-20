@@ -104,5 +104,10 @@ public class Player : KinematicBody2D
         motion = CartesianToIsometric(motion);
 
         MoveAndCollide(motion);
+
+        Position = new Vector2(
+                        Mathf.Clamp(Position.x, 0, GetViewportRect().Size.x),
+                        Mathf.Clamp(Position.y, 0, GetViewportRect().Size.y)
+                    );
     }
 }
