@@ -50,6 +50,10 @@ script = ExtResource( 3 )
 
 [node name="LaserCooldown" type="Timer" parent="."]
 
+[node name="RailgunCooldown" type="Timer" parent="."]
+
+[node name="MissileCooldown" type="Timer" parent="."]
+
 [node name="LockIndicator" type="Sprite" parent="."]
 modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.25, 0.25 )

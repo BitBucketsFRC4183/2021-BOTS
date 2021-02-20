@@ -10,7 +10,9 @@ radius = 128.0
 
 [sub_resource type="CircleShape2D" id=2]
 
-[node name="Planet" type="KinematicBody2D"]
+[node name="Planet" type="KinematicBody2D" groups=[
+"Landables",
+]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 2 )
