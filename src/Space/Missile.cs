@@ -1,19 +1,27 @@
 using Godot;
 using System;
 
-public class Missile : SpaceProjectile, SpaceDamagable
+public class Missile : SpaceProjectile, SpaceDamagable, Destroyable
 {
     public bool Homing = false;
     public float CruiseVelocity = 10000f;
     public float Acceleration = 100f;
     public float RotationDeadband = 0.1f;
     public float RotationSpeed = 4f;
-    public Node2D Target;
+    public Destroyable Target;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        if (Target != null)
+        {
+            Target.Destroyed += OnTargetDestroyed;
+        }
+    }
 
     public void Hit()
     {
-        Destroyed = true;
-        QueueFree();
+        Destroy();
     }
 
     public override void _PhysicsProcess(float delta)
@@ -52,6 +60,8 @@ public class Missile : SpaceProjectile, SpaceDamagable
             }
             targetVelocityDifference = targetVelocityDifference.Normalized() / 2;
             AddForce(new Vector2(1, 0).Rotated(Rotation) + targetVelocityDifference, Acceleration * delta);
+
+            Lifetime -= delta;
         }
         else
         {
@@ -76,5 +86,13 @@ public class Missile : SpaceProjectile, SpaceDamagable
             }
             AddForce(Rotation, Acceleration * delta);
         }
+    }
+    public override void OnCollision(Node2D body)
+    {
+        Hit();
+    }
+    private void OnTargetDestroyed()
+    {
+        Target = null;
     }
 }

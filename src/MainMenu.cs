@@ -18,7 +18,7 @@ public class MainMenu : MarginContainer
 
     void OnNewGamePressed()
     {
-        loaderProgress.loadPlanet();
+        loaderProgress.loadPlanet("res://src/Planet/Planet.tscn");
         ((Button) FindNode("NewGame")).Disabled = true;
     }
 

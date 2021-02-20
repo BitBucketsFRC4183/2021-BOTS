@@ -8,11 +8,19 @@ public class Rail : SpaceProjectile, SpaceDamagable
     public float Acceleration = 100f;
     public float RotationDeadband = 0.1f;
     public float RotationSpeed = 0.3f;
-    public Node2D Target;
+    public Destroyable Target;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        if (Target != null)
+        {
+            Target.Destroyed += OnTargetDestroyed;
+        }
+    }
     public void Hit()
     {
-        Destroyed = true;
-        QueueFree();
+        Destroy();
     }
 
     public override void _PhysicsProcess(float delta)
@@ -41,5 +49,13 @@ public class Rail : SpaceProjectile, SpaceDamagable
             }
             AddForce(Rotation, Acceleration * delta);
         }
+    }
+    public override void OnCollision(Node2D body)
+    {
+        Hit();
+    }
+    private void OnTargetDestroyed()
+    {
+        Target = null;
     }
 }
