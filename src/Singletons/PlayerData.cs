@@ -46,8 +46,6 @@ public class PlayerData : Node
         {
             resources[r] -= u.Cost[r];
         }
-        
-        Signals.PublishUpgradesChangedEvent();
     }
 
     public bool IsUpgradeMaxLevel(Enums.RoverUpgradeType rover, Enums.ShipUpgradeType ship)

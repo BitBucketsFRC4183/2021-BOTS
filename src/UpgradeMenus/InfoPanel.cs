@@ -65,6 +65,7 @@ public class InfoPanel : Control
         if (PlayerData.Instance.CanUpgrade(roverUpgrade, shipUpgrade))
         {
             PlayerData.Instance.UpgradeTech(roverUpgrade, shipUpgrade);
+            Signals.PublishUpgradesChangedEvent();
         }
     }
 
