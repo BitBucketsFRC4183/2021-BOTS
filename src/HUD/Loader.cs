@@ -22,8 +22,7 @@ public class Loader : Control
         currentScene = Root.GetChild(Root.GetChildCount() - 1);
     }
 
-    public void loadPlanet(string filePath)
-    {
+    public void loadPlanet(string filePath) {
         Visible = true;
         loader = ResourceLoader.LoadInteractive(filePath);
     }
