@@ -11,8 +11,15 @@ public class Signals : Node
     [Signal] public delegate void CollectingResource();
     [Signal] public delegate void NotCollectingResource();
 
+    public static event Action UpgradesChanged;
+
     public override void _Ready()
     {
         Instance = this;
+    }
+
+    public static void PublishUpgradesChangedEvent()
+    {
+        UpgradesChanged?.Invoke();
     }
 }

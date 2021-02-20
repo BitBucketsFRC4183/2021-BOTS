@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://src/Planet/Planet.cs" type="Script" id=1]
 [ext_resource path="res://assets/tilesets/iso_terrain.tres" type="TileSet" id=2]
@@ -90,7 +90,8 @@
 [ext_resource path="res://assets/spacekit/Isometric/rocket_baseB_SW.png" type="Texture" id=88]
 [ext_resource path="res://assets/spacekit/Isometric/rocket_topA_NE.png" type="Texture" id=89]
 [ext_resource path="res://src/HUD/HUD.tscn" type="PackedScene" id=90]
-[ext_resource path="res://src/Space/SpaceShuttleArea.tscn" type="PackedScene" id=91]
+[ext_resource path="res://src/Planet/Story.tscn" type="PackedScene" id=91]
+[ext_resource path="res://src/Space/SpaceShuttleArea.tscn" type="PackedScene" id=92]
 
 [sub_resource type="TileSet" id=1]
 0/name = "rocket_baseA_NE"
@@ -1366,12 +1367,17 @@ position = Vector2( 1480.44, 460.595 )
 type = 5
 amount = 5
 
-[node name="HUD" parent="." instance=ExtResource( 90 )]
 
-[node name="SpaceShuttleArea" parent="." instance=ExtResource( 91 )]
+
+[node name="SpaceShuttleArea" parent="." instance=ExtResource( 92 )]
 position = Vector2( 1685.74, 393.151 )
 
 [node name="CollisionShape2D" parent="SpaceShuttleArea" index="0"]
 position = Vector2( -20.1815, 104.271 )
 
 [editable path="SpaceShuttleArea"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 90 )]
+
+[node name="Story" parent="CanvasLayer" instance=ExtResource( 91 )]
