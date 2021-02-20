@@ -1,0 +1,36 @@
+[gd_scene format=2]
+
+[node name="Story" type="AcceptDialog"]
+margin_left = -2.0
+margin_right = 500.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 500, 500 )
+window_title = "Objective"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "THE YEAR IS 207X.
+A LONE TRAVELER
+YOU ARE TASKED WITH FIXING EARTH'S ENERGY CRISIS
+YOUR RESEARCH CARRIES YOU TOWARD THE STARS
+YOU TRAVEL THROUGH SPACE BUT CRASH LAND
+FINDING YOURSELF IN THE SOLAR SYSTEM 
+YOU MUST REPAIR YOUR WORMHOLE DRIVE
+AND RETURN HOME WITH YOUR FINDINGS 
+YOU HAVE YOUR MISSION
+IT'S TIME TO EMBARK"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
