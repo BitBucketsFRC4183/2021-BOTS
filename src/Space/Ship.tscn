@@ -57,7 +57,7 @@ texture = ExtResource( 8 )
 script = ExtResource( 4 )
 MinZoomVisible = 0.0
 MaxZoomVisible = 1e+09
-OverrideVisibility = true
+OverrideVisibility = false
 BaseScale = Vector2( 0.25, 0.25 )
 
 [node name="ThrusterFlame" type="Sprite" parent="."]

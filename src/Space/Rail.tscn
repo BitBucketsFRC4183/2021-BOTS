@@ -28,5 +28,5 @@ scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 MaxZoomVisible = 1e+07
-OverrideRotation = true
+OverrideRotation = false
 BaseScale = Vector2( 0.125, 0.125 )
