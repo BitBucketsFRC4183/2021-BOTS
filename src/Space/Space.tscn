@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Space/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Space/Star.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Space/Space.cs" type="Script" id=3]
 
 [node name="Space" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Ship" parent="." instance=ExtResource( 1 )]
 rotation = -1.5708

@@ -5,10 +5,7 @@
     <GodotUseNETFrameworkRefAssemblies>true</GodotUseNETFrameworkRefAssemblies>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Folder Include="src\Singletons" />
-=======
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="$(MicrosoftNETFrameworkReferenceAssembliesLatestPackageVersion)" IsImplicitlyDefined="true" Condition="'$(_FullFrameworkReferenceAssemblyPaths)' == ''" />
->>>>>>> main
   </ItemGroup>
 </Project>
