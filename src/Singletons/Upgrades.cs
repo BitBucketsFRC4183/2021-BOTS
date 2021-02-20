@@ -4,27 +4,27 @@ public class RoverUpgrades
 {
     public static Upgrade[] Speed { get; } =
     {
-        new Upgrade("Rover Speed T1", new InventoryResources{Graprofium = 10}),
-        new Upgrade("Rover Speed T2", new InventoryResources{Graprofium = 50}),
-        new Upgrade("Rover Speed T3", new InventoryResources{Graprofium = 100})
+        new Upgrade("Speed T1", new InventoryResources{Graprofium = 10}),
+        new Upgrade("Speed T2", new InventoryResources{Graprofium = 50}),
+        new Upgrade("Speed T3", new InventoryResources{Graprofium = 100})
     };
     public static Upgrade[] Tank { get; } =
     {
-        new Upgrade("Rover Tank T1", new InventoryResources{Graprofium = 10, Kamenium = 40}),
-        new Upgrade("Rover Tank T2", new InventoryResources{Graprofium = 50, Kamenium = 40}),
-        new Upgrade("Rover Tank T3", new InventoryResources{Graprofium = 100, Kamenium = 40})
+        new Upgrade("Tank T1", new InventoryResources{Graprofium = 10, Kamenium = 40}),
+        new Upgrade("Tank T2", new InventoryResources{Graprofium = 50, Kamenium = 40}),
+        new Upgrade("Tank T3", new InventoryResources{Graprofium = 100, Kamenium = 40})
     };
     public static Upgrade[] Regen { get; } =
     {
-        new Upgrade("Rover Fluid Regeneration T1", new InventoryResources{Graprofium = 10, Kamenium = 40, Wooflowium = 50}),
-        new Upgrade("Rover Fluid Regeneration T2", new InventoryResources{Graprofium = 50, Kamenium = 40, Wooflowium = 150}),
-        new Upgrade("Rover Fluid Regeneration T3", new InventoryResources{Graprofium = 100, Kamenium = 40, Wooflowium = 250})
+        new Upgrade("Fluid Regen T1", new InventoryResources{Graprofium = 10, Kamenium = 40, Wooflowium = 50}),
+        new Upgrade("Fluid Regen T2", new InventoryResources{Graprofium = 50, Kamenium = 40, Wooflowium = 150}),
+        new Upgrade("Fluid Regen T3", new InventoryResources{Graprofium = 100, Kamenium = 40, Wooflowium = 250})
     };
     public static Upgrade[] Inventory { get; } =
     {
-        new Upgrade("Rover Inventory T1", new InventoryResources{Graprofium = 10, Kamenium = 40}),
-        new Upgrade("Rover Inventory T2", new InventoryResources{Graprofium = 50, Kamenium = 40}),
-        new Upgrade("Rover Inventory T3", new InventoryResources{Graprofium = 100, Kamenium = 40})
+        new Upgrade("Inventory T1", new InventoryResources{Graprofium = 10, Kamenium = 40}),
+        new Upgrade("Inventory T2", new InventoryResources{Graprofium = 50, Kamenium = 40}),
+        new Upgrade("Inventory T3", new InventoryResources{Graprofium = 100, Kamenium = 40})
     };
 
     public Upgrade[] this[Enums.RoverUpgradeType index]

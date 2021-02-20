@@ -20,29 +20,29 @@ margin_bottom = 980.0
 color = Color( 0.403922, 0.403922, 0.403922, 1 )
 
 [node name="Speed" parent="Background" instance=ExtResource( 2 )]
-margin_left = 235.286
-margin_top = 49.5718
-margin_right = -1534.71
-margin_bottom = -747.428
-rect_scale = Vector2( 2, 2 )
+margin_left = 44.0
+margin_top = 28.0
+margin_right = -1726.0
+margin_bottom = -769.0
+rect_scale = Vector2( 2.5, 2.5 )
 
 [node name="Tank" parent="Background" instance=ExtResource( 2 )]
-margin_left = 256.027
-margin_top = 513.294
-margin_right = -1513.97
-margin_bottom = -283.706
-rect_scale = Vector2( 2, 2 )
+margin_left = 501.0
+margin_top = 404.0
+margin_right = -1269.0
+margin_bottom = -393.0
+rect_scale = Vector2( 2.5, 2.5 )
 
 [node name="Regen" parent="Background" instance=ExtResource( 2 )]
-margin_left = 1404.54
-margin_top = 41.2675
-margin_right = -365.459
-margin_bottom = -755.732
-rect_scale = Vector2( 2, 2 )
+margin_left = 967.0
+margin_top = 28.0
+margin_right = -802.999
+margin_bottom = -768.999
+rect_scale = Vector2( 2.5, 2.5 )
 
 [node name="Inventory" parent="Background" instance=ExtResource( 2 )]
-margin_left = 1404.93
-margin_top = 506.25
-margin_right = -365.068
-margin_bottom = -290.75
-rect_scale = Vector2( 2, 2 )
+margin_left = 1437.0
+margin_top = 404.0
+margin_right = -332.998
+margin_bottom = -393.0
+rect_scale = Vector2( 2.5, 2.5 )
