@@ -43,6 +43,28 @@ public class RoverUpgrades
     }
 }
 
+public class ShipUpgrades
+{
+    public static Upgrade[] Shields { get; } =
+    {
+        new Upgrade("Ship Shields T1", new InventoryResources{Graprofium = 2}),
+        new Upgrade("Ship Shields T2"),
+        new Upgrade("Ship Shields T3")
+    };
+
+    public Upgrade[] this[Enums.ShipUpgradeType index]
+    {
+        get
+        {
+            switch (index)
+            {
+                case Enums.ShipUpgradeType.SHIELDS: return Shields;
+                default: throw new IndexOutOfRangeException($"Index {index} out of range for {this.GetType().ToString()}");
+            }
+        }
+    }
+}
+
 public class Upgrade
 {
     public string Name { get; set; }

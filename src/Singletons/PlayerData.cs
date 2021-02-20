@@ -11,6 +11,9 @@ public class PlayerData : Node
     public RoverUpgrades roverUpgrades = new RoverUpgrades();
     public RoverUpgradeLevels roverLevels = new RoverUpgradeLevels();
 
+    public ShipUpgrades shipUpgrades = new ShipUpgrades();
+    public ShipUpgradeLevels shipLevels = new ShipUpgradeLevels();
+
     public override void _Ready()
     {
         Instance = this;
@@ -45,8 +48,8 @@ public class PlayerData : Node
 
     public Upgrade GetUpgrade(Enums.RoverUpgradeType rover, Enums.ShipUpgradeType ship)
     {
-        Upgrade[] uT = rover != Enums.RoverUpgradeType.NULL ? roverUpgrades[rover] : null;
-        Upgrade u = rover != Enums.RoverUpgradeType.NULL ? uT[roverLevels[rover]] : null;
+        Upgrade[] uT = rover != Enums.RoverUpgradeType.NULL ? roverUpgrades[rover] : shipUpgrades[ship];
+        Upgrade u = rover != Enums.RoverUpgradeType.NULL ? uT[roverLevels[rover]] : uT[shipLevels[ship]];
         return u;
     }
 

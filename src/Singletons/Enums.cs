@@ -20,6 +20,7 @@ public class Enums
 
     public enum ShipUpgradeType
     {
+        SHIELDS,
         NULL
     }
 
