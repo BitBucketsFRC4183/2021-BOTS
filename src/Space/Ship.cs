@@ -27,7 +27,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
 
     private float targetLockRadius = 100;
 
-    public Node2D WeaponTarget = null;
+    public Destroyable WeaponTarget = null;
 
 
     public bool CanLaserFire = true;
@@ -39,6 +39,8 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
     private Sprite targetLockIndicator;
     private Sprite thrusterFlame;
     private Camera2D activeCamera;
+
+    public event Action Destroyed;
 
     public enum Weapon
     {
@@ -143,7 +145,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             thrusterFlame.Visible = false;
         }
     }
-    public void FireWeapon(Node2D target, Weapon weapon)
+    public void FireWeapon(Destroyable target, Weapon weapon)
     {
         if (weapon == Weapon.Missile)
         {
@@ -151,7 +153,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             missile1.Homing = MissileHoming;
             missile1.Target = target;
             missile1.GlobalRotation = GlobalRotation;
-            missile1.GlobalPosition = GlobalPosition;
+            missile1.Position = GlobalPosition;
             missile1.GlobalPosition += new Vector2(MissileOffset, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(90));
             missile1.Velocity = Velocity;
             missile1.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(90)), ProjectileEjectionForce);
@@ -161,7 +163,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             missile2.Homing = MissileHoming;
             missile2.Target = target;
             missile2.GlobalRotation = GlobalRotation;
-            missile2.GlobalPosition = GlobalPosition;
+            missile2.Position = GlobalPosition;
             missile2.GlobalPosition += new Vector2(MissileOffset, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(-90));
             missile2.Velocity = Velocity;
             missile2.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + Mathf.Deg2Rad(-90)), ProjectileEjectionForce);
@@ -192,7 +194,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
                 rail.GlobalRotation = GlobalRotation + GetAngleTo(GetGlobalMousePosition());
                 rail.AddForce(new Vector2(1, 0).Rotated(GlobalRotation + GetAngleTo(GetGlobalMousePosition())), RailEjectionForce);
             }
-            rail.GlobalPosition = GlobalPosition;
+            rail.Position = GlobalPosition;
             GetParent().AddChild(rail);
         }
     }
@@ -205,17 +207,24 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
         }
         else
         {
-            Destroyed = true;
+            Destroyed?.Invoke();
             QueueFree();
         }
+    }
+
+
+
+    public override void OnCollision(Node2D body)
+    {
+        Hit();
     }
 
     public void TryLock(Godot.Collections.Array lockables)
     {
         Vector2 distance = Vector2.Inf;
-        Node2D tempTarget = null;
+        Destroyable tempTarget = null;
 
-        foreach (Node2D lockable in lockables)
+        foreach (Destroyable lockable in lockables)
         {
             Vector2 lockableDistance = lockable.GlobalPosition - GetGlobalMousePosition();
             lockableDistance.x = Mathf.Abs(lockableDistance.x);
@@ -229,11 +238,21 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
         }
         if (Mathf.Abs(distance.x) > targetLockRadius * activeCamera.Zoom.x || Mathf.Abs(distance.y) > targetLockRadius * activeCamera.Zoom.y)
         {
+            if (WeaponTarget != null)
+            {
+                WeaponTarget.Destroyed -= OnTargetDestroyed;
+            }
             WeaponTarget = null;
         }
         else
         {
             WeaponTarget = tempTarget;
+            WeaponTarget.Destroyed += OnTargetDestroyed;
         }
+    }
+
+    private void OnTargetDestroyed()
+    {
+        WeaponTarget = null;
     }
 }

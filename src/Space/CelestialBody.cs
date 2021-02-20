@@ -27,18 +27,21 @@ public class CelestialBody : KinematicBody2D
 
     public override void _PhysicsProcess(float delta)
     {
-        foreach (Node node in InfluencedBodies)
+        if (InfluencedBodies != null)
         {
-            if (node is SpacePhysicsObject body)
+            foreach (Node node in InfluencedBodies)
             {
-                float distanceFromBody = GlobalPosition.DistanceTo(body.GlobalPosition);
+                if (node is SpacePhysicsObject body)
+                {
+                    float distanceFromBody = GlobalPosition.DistanceTo(body.GlobalPosition);
 
-                body.AddForce(body.GetAngleTo(GlobalPosition) + body.Rotation, Gravity / (distanceFromBody / (Gravity * 100)) * delta);
+                    body.AddForce(body.GetAngleTo(GlobalPosition) + body.Rotation, Gravity / (distanceFromBody / (Gravity * 100)) * delta);
+                }
             }
-        }
-        if (OrbitalParent != null)
-        {
+            if (OrbitalParent != null)
+            {
 
+            }
         }
     }
     public void UpdateInfluence(Node body)
