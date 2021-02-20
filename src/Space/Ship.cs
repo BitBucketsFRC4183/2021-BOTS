@@ -299,7 +299,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
         }
         if (Mathf.Abs(distance.x) > tempLandable.LandableRadius || Mathf.Abs(distance.y) > tempLandable.LandableRadius)
         {
-            
+            tempLandable.Land();
         }
         else
         {

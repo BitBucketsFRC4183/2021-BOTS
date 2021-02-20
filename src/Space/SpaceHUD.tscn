@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/hud/resource_bar_progress.png" type="Texture" id=1]
 [ext_resource path="res://assets/hud/resource_bar_over.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Rigelstar.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/Space/FuelBar.cs" type="Script" id=4]
 [ext_resource path="res://src/Space/Tutorial.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/HUD/Loader.cs" type="Script" id=6]
 [ext_resource path="res://src/HUD/Loader.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
@@ -35,16 +34,12 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 alignment = 2
 
-[node name="Loader" type="Control" parent="MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Loader" parent="MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 visible = false
 margin_left = 1840.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_min_size = Vector2( 80, 0 )
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 1920.0
