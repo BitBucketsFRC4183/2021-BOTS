@@ -61,6 +61,8 @@ public class Player : KinematicBody2D
             resource.QueueFree();
             resource = null;
             Signals.Instance.EmitSignal(nameof(Signals.NotCollectingResource));
+            
+            Signals.PublishUpgradesChangedEvent();
         }
     }
     
