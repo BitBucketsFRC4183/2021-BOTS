@@ -8,6 +8,15 @@ public class ZoomoutIcon : Sprite
     [Export]
     public float MaxZoomVisible = 10;
     public float Zoom = 1;
+
+    [Export]
+    // If this is true the icon will set it's visibility based on the zoom of the camera.
+    public bool OverrideVisibility = true;
+
+    [Export]
+    // If this is true the global rotation of the icon will always be 0.
+    public bool OverrideRotation = true;
+
     [Export]
     public Vector2 BaseScale = Vector2.One;
 
@@ -26,13 +35,22 @@ public class ZoomoutIcon : Sprite
         Zoom = ActiveCamera.Zoom.x;
         if (Zoom >= MinZoomVisible && Zoom <= MaxZoomVisible)
         {
-            Visible = true;
-            GlobalRotation = 0;
+            if (OverrideVisibility)
+            {
+                Visible = true;
+            }
+            if (OverrideRotation)
+            {
+                GlobalRotation = 0;
+            }
             Scale = BaseScale * ActiveCamera.Zoom;
         }
         else
         {
-            Visible = false;
+            if (OverrideVisibility)
+            {
+                Visible = false;
+            }
         }
     }
 }
