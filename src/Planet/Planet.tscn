@@ -147,7 +147,7 @@
 [ext_resource path="res://assets/spacekit/Isometric/terrain_side_SW.png" type="Texture" id=145]
 [ext_resource path="res://assets/spacekit/Isometric/terrain_sideCorner_SE.png" type="Texture" id=146]
 
-[sub_resource type="TileSet" id=3]
+[sub_resource type="TileSet" id=1]
 0/name = "terrain_NE"
 0/texture = ExtResource( 111 )
 0/tex_offset = Vector2( 0, 0 )
@@ -1384,7 +1384,7 @@ resource_local_to_scene = true
 31/shapes = [  ]
 31/z_index = 0
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=3]
 0/name = "rocket_baseA_NE"
 0/texture = ExtResource( 83 )
 0/tex_offset = Vector2( 0, 0 )
@@ -1965,7 +1965,7 @@ tile_data = PoolIntArray( -1048563, 0, 0, -1048562, 0, 0, -983028, 0, 0, -983027
 
 [node name="Terrain2" type="TileMap" parent="Tilemaps"]
 mode = 1
-tile_set = SubResource( 3 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 128, 64 )
 centered_textures = true
 collision_mask = 2
@@ -2071,7 +2071,7 @@ tile_data = PoolIntArray( 65563, 20, 0, 720897, 12, 0 )
 
 [node name="Rocket" type="TileMap" parent="Tilemaps/Rockets"]
 mode = 1
-tile_set = SubResource( 1 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 128, 64 )
 centered_textures = true
 collision_layer = 8

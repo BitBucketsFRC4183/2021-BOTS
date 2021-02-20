@@ -22,9 +22,9 @@ public class Loader : Control
         currentScene = Root.GetChild(Root.GetChildCount() - 1);
     }
 
-    public void loadPlanet() {
+    public void loadPlanet(string filePath) {
         Visible = true;
-        loader = ResourceLoader.LoadInteractive("res://src/Planet/Planet.tscn");
+        loader = ResourceLoader.LoadInteractive(filePath);
     }
 
     public override void _Process(float delta)
