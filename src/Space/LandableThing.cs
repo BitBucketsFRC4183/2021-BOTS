@@ -1,8 +1,9 @@
 using Godot;
 using System;
 
-public class LandableThing : Node
+public interface LandableThing
 {
     [Export]
-    public PackedScene LandingScene;
+    PackedScene LandingScene { get; set; }
+    void Land();
 }
