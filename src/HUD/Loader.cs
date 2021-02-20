@@ -22,40 +22,46 @@ public class Loader : Control
         currentScene = Root.GetChild(Root.GetChildCount() - 1);
     }
 
-    public void loadPlanet() {
+    public void loadPlanet(string filePath)
+    {
         Visible = true;
-        loader = ResourceLoader.LoadInteractive("res://src/Planet/Planet.tscn");
+        loader = ResourceLoader.LoadInteractive(filePath);
     }
 
     public override void _Process(float delta)
     {
-        if (loader == null) {
+        if (loader == null)
+        {
             return;
         }
 
         Error err = loader.Poll();
 
-        if (err == Error.FileEof) {
+        if (err == Error.FileEof)
+        {
             Resource resource = loader.GetResource();
             loader = null;
-            setNewScene((PackedScene) resource);
+            setNewScene((PackedScene)resource);
             return;
         }
-        else if (err == Error.Ok) {
+        else if (err == Error.Ok)
+        {
             updateProgress();
             return;
         }
     }
 
-    public void updateProgress() {
-        var loadProgress = ((float) loader.GetStage()) / loader.GetStageCount();
+    public void updateProgress()
+    {
+        var loadProgress = ((float)loader.GetStage()) / loader.GetStageCount();
 
         progress.Value = loadProgress * 100;
     }
 
-    async public Task setNewScene(PackedScene resource) {
+    async public Task setNewScene(PackedScene resource)
+    {
         await SceneChanger.Instance.Fade();
-        
+
         currentScene.QueueFree();
 
         currentScene = resource.Instance();
