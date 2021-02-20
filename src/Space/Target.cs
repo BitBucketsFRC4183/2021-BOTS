@@ -1,16 +1,16 @@
 using Godot;
 using System;
 
-public class Target : SpacePhysicsObject, SpaceDamagable
+public class Target : SpacePhysicsObject, SpaceDamagable, Destroyable
 {
+    public event Action Destroyed;
     public void Hit()
     {
-        Destroyed = true;
+        Destroyed?.Invoke();
         QueueFree();
     }
-    public void OnCollision()
+    public override void OnCollision(Node2D body)
     {
-        base.OnCollision();
         Hit();
     }
 }

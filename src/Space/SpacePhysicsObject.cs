@@ -3,7 +3,6 @@ using System;
 
 public class SpacePhysicsObject : KinematicBody2D
 {
-    public bool Destroyed = false;
     [Export]
     public float Mass = 1;
     [Export]
@@ -18,10 +17,14 @@ public class SpacePhysicsObject : KinematicBody2D
     public override void _PhysicsProcess(float delta)
     {
         // Placeholder
-        MoveAndCollide(Velocity);
+        KinematicCollision2D collision = MoveAndCollide(Velocity);
+        if (collision != null)
+        {
+            OnCollision((Node2D)collision.Collider);
+        }
     }
 
-    public void OnCollision()
+    public virtual void OnCollision(Node2D body)
     {
 
     }
