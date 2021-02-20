@@ -26,8 +26,8 @@ public class MainMenu : MarginContainer
         OS.WindowFullscreen = !OS.WindowFullscreen;
     }
 
-    void OnExitPressed()
-    {
-        GetTree().Quit();
-    }
+	void OnExitPressed()
+	{
+		GetTree().Quit();
+	}
 }

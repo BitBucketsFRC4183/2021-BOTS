@@ -7,14 +7,26 @@ public class Planet : Node2D
 {
 	Array<TileMap> tileMaps = new Array<TileMap>();
 
-    public override void _Ready()
-    {
-        CheckChildren(GetChildren());
-        
-        foreach (TileMap map in tileMaps) {
-            MakeTileCollisionShapes(map);
-        }
-    }
+	AcceptDialog story;
+
+	public override void _Ready()
+
+	{
+		story = GetNode<AcceptDialog>("CanvasLayer/Story");
+		
+		CheckChildren(GetChildren());
+		
+		foreach (TileMap map in tileMaps) {
+			MakeTileCollisionShapes(map);
+		}
+
+		if (!PlayerData.Instance.ViewedStory) {
+			story.PopupCentered();
+			PlayerData.Instance.ViewedStory = false;
+			GD.Print("Story is popped");
+		}
+
+	}
 
 	// go through each tilemap and add it to list if we want to generate collisions for it
 	// determined by whether it has a collision layer and mask
@@ -34,6 +46,7 @@ public class Planet : Node2D
 			} else if (child is Node2D) {
 				CheckChildren(child.GetChildren());
 			}
+
 		}
 
 	}
