@@ -10,5 +10,4 @@ public class SpaceShuttleArea : Area2D
     {
         SceneChanger.Instance.GoToScene(spaceScene);
     }
-
 }

@@ -16,6 +16,8 @@ public class PlayerData : Node
 
     public static int MaxUpgradeLevel = 3;
 
+    public bool ViewedStory = false;
+ 
     public override void _Ready()
     {
         Instance = this;
