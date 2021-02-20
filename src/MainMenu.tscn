@@ -3,6 +3,7 @@
 [ext_resource path="res://assets/fonts/Rigelstar.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/MainMenu.cs" type="Script" id=2]
 [ext_resource path="res://assets/mainscreen_bg.jpg" type="Texture" id=3]
+[ext_resource path="res://src/HUD/Loader.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
@@ -12,9 +13,7 @@ region_rect = Rect2( 0, 0, 1920, 1080 )
 size = 60
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = ExtResource( 1 )
 
@@ -25,6 +24,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+loaderProgressPath = NodePath("TitleContainer/CenterContainer/MenuButtons/HBoxContainer/Loader")
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1920.0
@@ -50,46 +50,56 @@ margin_right = 1920.0
 margin_bottom = 838.0
 rect_min_size = Vector2( 500, 500 )
 
-[node name="Panel" type="Panel" parent="TitleContainer/CenterContainer"]
-margin_left = 710.0
-margin_right = 1210.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 500, 500 )
-custom_styles/panel = SubResource( 3 )
-
-[node name="MenuButtons" type="VBoxContainer" parent="TitleContainer/CenterContainer/Panel"]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -104.5
-margin_bottom = 104.5
+[node name="MenuButtons" type="VBoxContainer" parent="TitleContainer/CenterContainer"]
+margin_left = 660.0
+margin_top = 128.0
+margin_right = 1260.0
+margin_bottom = 372.0
+rect_min_size = Vector2( 500, 0 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewGame" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_right = 501.0
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleContainer/CenterContainer/MenuButtons"]
+margin_right = 600.0
 margin_bottom = 67.0
-custom_fonts/font = SubResource( 4 )
+rect_min_size = Vector2( 600, 0 )
+
+[node name="NewGame" type="Button" parent="TitleContainer/CenterContainer/MenuButtons/HBoxContainer"]
+margin_right = 500.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 500, 0 )
+custom_fonts/font = SubResource( 3 )
 text = "New Game"
 
-[node name="Exit" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
+[node name="Loader" parent="TitleContainer/CenterContainer/MenuButtons/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_right = 504.0
+margin_bottom = 67.0
+
+[node name="Exit" type="Button" parent="TitleContainer/CenterContainer/MenuButtons"]
 margin_top = 71.0
-margin_right = 501.0
-margin_bottom = 138.0
-custom_fonts/font = SubResource( 4 )
+margin_right = 500.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 500, 70 )
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 3 )
 text = "Exit"
 
-[node name="Spacer" type="Label" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 142.0
-margin_right = 501.0
-margin_bottom = 167.0
+[node name="Spacer" type="Label" parent="TitleContainer/CenterContainer/MenuButtons"]
+margin_top = 145.0
+margin_right = 600.0
+margin_bottom = 170.0
 rect_min_size = Vector2( 0, 25 )
 
-[node name="Fullscreen" type="CheckButton" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 171.0
+[node name="Fullscreen" type="CheckButton" parent="TitleContainer/CenterContainer/MenuButtons"]
+margin_top = 174.0
 margin_right = 501.0
-margin_bottom = 240.0
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 244.0
+rect_min_size = Vector2( 500, 70 )
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 3 )
 text = "Fullscreen"
