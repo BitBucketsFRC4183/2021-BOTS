@@ -4,7 +4,7 @@ public class RoverUpgrades
 {
     public static Upgrade[] Speed { get; } =
     {
-        new Upgrade("Rover Speed T1"),
+        new Upgrade("Rover Speed T1", new InventoryResources{Graprofium = 2}),
         new Upgrade("Rover Speed T2"),
         new Upgrade("Rover Speed T3")
     };

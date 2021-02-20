@@ -54,7 +54,7 @@ public class InfoPanel : Control
                 p.MinValue = 0;
                 p.Visible = true;
                 p.Value = PlayerData.Instance.resources[r] >= u.Cost[r] ? u.Cost[r] : PlayerData.Instance.resources[r];
-                p.GetNode<Label>("Label").Text = resources[(int) r] + ": " + p.Value + " / " + p.MaxValue;
+                p.GetNode<Label>("Name").Text = resources[(int) r] + ": " + p.Value + " / " + p.MaxValue;
             }
             else p.Visible = false;
         }

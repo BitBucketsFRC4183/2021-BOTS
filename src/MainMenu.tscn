@@ -69,28 +69,27 @@ __meta__ = {
 }
 
 [node name="NewGame" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 89.0
 margin_right = 501.0
-margin_bottom = 156.0
+margin_bottom = 67.0
 custom_fonts/font = SubResource( 4 )
 text = "New Game"
 
 [node name="Exit" type="Button" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 160.0
+margin_top = 71.0
 margin_right = 501.0
-margin_bottom = 227.0
+margin_bottom = 138.0
 custom_fonts/font = SubResource( 4 )
 text = "Exit"
 
 [node name="Spacer" type="Label" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 230.0
+margin_top = 142.0
 margin_right = 501.0
-margin_bottom = 255.0
+margin_bottom = 167.0
 rect_min_size = Vector2( 0, 25 )
 
 [node name="Fullscreen" type="CheckButton" parent="TitleContainer/CenterContainer/Panel/MenuButtons"]
-margin_top = 260.0
+margin_top = 171.0
 margin_right = 501.0
-margin_bottom = 329.0
+margin_bottom = 240.0
 custom_fonts/font = SubResource( 4 )
 text = "Fullscreen"

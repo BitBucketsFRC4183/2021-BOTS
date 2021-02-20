@@ -10,5 +10,7 @@ public class UpgradeRover : MarginContainer
         bg.GetNode<InfoPanel>("Tank").SetPanelType(InfoPanel.UpgradeType.ROVER, Enums.RoverUpgradeType.TANK);
         bg.GetNode<InfoPanel>("Regen").SetPanelType(InfoPanel.UpgradeType.ROVER, Enums.RoverUpgradeType.REGEN);
         bg.GetNode<InfoPanel>("Inventory").SetPanelType(InfoPanel.UpgradeType.ROVER, Enums.RoverUpgradeType.INVENTORY);
+        
+        Signals.PublishUpgradesChangedEvent();
     }
 }
