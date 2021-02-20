@@ -14,6 +14,8 @@ public class PlayerData : Node
     public ShipUpgrades shipUpgrades = new ShipUpgrades();
     public ShipUpgradeLevels shipLevels = new ShipUpgradeLevels();
 
+    public static int MaxUpgradeLevel = 3;
+
     public override void _Ready()
     {
         Instance = this;
@@ -44,6 +46,11 @@ public class PlayerData : Node
         }
         
         Signals.PublishUpgradesChangedEvent();
+    }
+
+    public bool IsUpgradeMaxLevel(Enums.RoverUpgradeType rover, Enums.ShipUpgradeType ship)
+    {
+        return rover != Enums.RoverUpgradeType.NULL ? roverLevels[rover] == MaxUpgradeLevel : shipLevels[ship] == MaxUpgradeLevel;
     }
 
     public Upgrade GetUpgrade(Enums.RoverUpgradeType rover, Enums.ShipUpgradeType ship)

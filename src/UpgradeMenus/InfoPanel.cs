@@ -7,8 +7,8 @@ public class InfoPanel : Control
 
     [Export] public UpgradeType PanelUpgradeType = UpgradeType.ROVER;
     
-    private Enums.RoverUpgradeType roverUpgrade;
-    private Enums.ShipUpgradeType shipUpgrade;
+    public Enums.RoverUpgradeType roverUpgrade;
+    public Enums.ShipUpgradeType shipUpgrade;
     
     public override void _Ready()
     {
