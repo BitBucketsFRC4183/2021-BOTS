@@ -52,6 +52,8 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
 
     public event Action Destroyed;
 
+    public event Action Destroyed;
+
     public enum Weapon
     {
         Missile,
