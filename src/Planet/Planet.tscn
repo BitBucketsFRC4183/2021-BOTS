@@ -1228,56 +1228,6 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -458733, 11, 0 )
 
-[node name="Rocket3" type="TileMap" parent="Tilemaps/Rockets"]
-mode = 1
-tile_set = ExtResource( 8 )
-cell_size = Vector2( 128, 64 )
-centered_textures = true
-collision_layer = 0
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( -524270, 13, 0 )
-
-[node name="Rocket4" type="TileMap" parent="Tilemaps/Rockets"]
-mode = 1
-tile_set = ExtResource( 8 )
-cell_size = Vector2( 128, 64 )
-centered_textures = true
-collision_layer = 0
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( -589807, 20, 0 )
-
-[node name="Rocket5" type="TileMap" parent="Tilemaps/Rockets"]
-mode = 1
-tile_set = ExtResource( 8 )
-cell_size = Vector2( 128, 64 )
-centered_textures = true
-collision_layer = 0
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( -655344, 26, 0 )
-
-[node name="Rocket6" type="TileMap" parent="Tilemaps/Rockets"]
-mode = 1
-tile_set = ExtResource( 8 )
-cell_size = Vector2( 128, 64 )
-centered_textures = true
-collision_layer = 0
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( -720881, 31, 0 )
-
-[node name="Rocket7" type="TileMap" parent="Tilemaps/Rockets"]
-mode = 1
-tile_set = ExtResource( 8 )
-cell_size = Vector2( 128, 64 )
-centered_textures = true
-collision_layer = 0
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( -786418, 36, 0 )
-
 [node name="SmallRocks" type="TileMap" parent="Tilemaps"]
 mode = 1
 tile_set = SubResource( 2 )
@@ -1324,10 +1274,6 @@ collision_mask = 2
 format = 1
 tile_data = PoolIntArray( -131062, 21, 0, -131061, 2, 0, -131060, 37, 0, -131059, 34, 0, -131058, 34, 0, -131057, 34, 0, -131056, 5, 0, -65524, 52, 0, -65520, 39, 0, 12, 52, 0, 16, 39, 0, 65548, 23, 0, 65552, 6, 0, 65553, 34, 0, 65554, 34, 0, 65555, 5, 0, 131091, 39, 0, 196627, 39, 0, 262158, 14, 0, 262159, 2, 0, 262160, 2, 0, 262161, 34, 0, 262162, 34, 0, 262163, 4, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 13 )]
-position = Vector2( 57.0175, 0 )
-collision_mask = 133
-
 [node name="Resources" type="Node2D" parent="."]
 
 [node name="GameResource" parent="Resources" instance=ExtResource( 17 )]
@@ -1367,7 +1313,63 @@ position = Vector2( 1480.44, 460.595 )
 type = 5
 amount = 5
 
+[node name="Player" parent="." instance=ExtResource( 13 )]
+position = Vector2( 57.0175, 0 )
+collision_mask = 133
 
+[node name="Tiles Which Go In Front" type="Node2D" parent="."]
+
+[node name="Rockets" type="Node2D" parent="Tiles Which Go In Front"]
+
+[node name="Rocket3" type="TileMap" parent="Tiles Which Go In Front/Rockets"]
+mode = 1
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 128, 64 )
+centered_textures = true
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -524270, 13, 0 )
+
+[node name="Rocket4" type="TileMap" parent="Tiles Which Go In Front/Rockets"]
+mode = 1
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 128, 64 )
+centered_textures = true
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -589807, 20, 0 )
+
+[node name="Rocket5" type="TileMap" parent="Tiles Which Go In Front/Rockets"]
+mode = 1
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 128, 64 )
+centered_textures = true
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -655344, 26, 0 )
+
+[node name="Rocket6" type="TileMap" parent="Tiles Which Go In Front/Rockets"]
+mode = 1
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 128, 64 )
+centered_textures = true
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -720881, 31, 0 )
+
+[node name="Rocket7" type="TileMap" parent="Tiles Which Go In Front/Rockets"]
+mode = 1
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 128, 64 )
+centered_textures = true
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -786418, 36, 0 )
 
 [node name="SpaceShuttleArea" parent="." instance=ExtResource( 92 )]
 position = Vector2( 1685.74, 393.151 )
@@ -1375,9 +1377,10 @@ position = Vector2( 1685.74, 393.151 )
 [node name="CollisionShape2D" parent="SpaceShuttleArea" index="0"]
 position = Vector2( -20.1815, 104.271 )
 
-[editable path="SpaceShuttleArea"]
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 90 )]
 
 [node name="Story" parent="CanvasLayer" instance=ExtResource( 91 )]
+
+[editable path="SpaceShuttleArea"]
