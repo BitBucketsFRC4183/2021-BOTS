@@ -3,7 +3,7 @@ using System;
 
 public class Player : KinematicBody2D
 {
-    const int SPEED = 400;
+    private int SPEED = 400;
     Vector2 motion = new Vector2();
     
     AnimationPlayer animPlayer;
@@ -19,6 +19,29 @@ public class Player : KinematicBody2D
         
         Signals.Instance.Connect("OverlappingResource", this, nameof(OnOverlappingResource));
         Signals.Instance.Connect("NotOverlappingResource", this, nameof(OnNotOverlappingResource));
+
+        Signals.UpgradesChanged += UpdateSpeed;
+    }
+
+    public override void _ExitTree()
+    {
+        Signals.UpgradesChanged -= UpdateSpeed;
+    }
+
+    private void UpdateSpeed()
+    {
+        int baseSpeed = 400;
+        switch (PlayerData.Instance.roverLevels[Enums.RoverUpgradeType.SPEED])
+        {
+            case 1: SPEED = 450;
+                break;
+            case 2: SPEED = 500;
+                break;
+            case 3: SPEED = 600;
+                break;
+            default: SPEED = baseSpeed;
+                break;
+        }
     }
 
     /////////

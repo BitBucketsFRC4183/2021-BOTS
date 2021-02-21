@@ -11,9 +11,9 @@ public class Space : Node2D
     {
         loader = GetNode<Loader>("SpaceHUD/MarginContainer/HBoxContainer/Loader");
         tutorial = GetNode<AcceptDialog>("SpaceHUD/Tutorial");
-	upgradeMenu = GetNode<CanvasLayer>("SpaceHUD").GetNode<UpgradeMain>("MainUpgradeMenu");
+	    upgradeMenu = GetNode<CanvasLayer>("SpaceHUD").GetNode<UpgradeMain>("MainUpgradeMenu");
 
-	upgradeMenu.Visible = false;
+	    upgradeMenu.Visible = false;
 
         if (!PlayerData.Instance.ViewedTutorial)
         {
