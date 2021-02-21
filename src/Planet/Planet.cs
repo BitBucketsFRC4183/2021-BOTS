@@ -25,7 +25,8 @@ public class Planet : Node2D
 			PlayerData.Instance.ViewedStory = false;
 			GD.Print("Story is popped");
 		}
-
+		
+		Signals.PublishRoverFuelChangedEvent();
 	}
 
 	// go through each tilemap and add it to list if we want to generate collisions for it

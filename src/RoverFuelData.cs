@@ -6,8 +6,8 @@ public class RoverFuelData
     public RoverFuelData()
     {
         Signals.UpgradesChanged += UpdateMaxFuel;
-        
-        UpdateMaxFuel();
+
+        MaxFuel = 200;
         CurrentFuel = MaxFuel;
     }
 
@@ -19,7 +19,7 @@ public class RoverFuelData
 
     public void UseFuel()
     {
-        CurrentFuel--;
+        CurrentFuel -= (PlayerData.Instance.roverLevels[Enums.RoverUpgradeType.SPEED] + 1) * 2;
         if (CurrentFuel <= 0) CurrentFuel = 0;
     }
 

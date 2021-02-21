@@ -12,6 +12,7 @@ public class RoverFuelBar : Control
         bar = GetNode<ProgressBar>("ProgressBar");
 
         bar.MinValue = 0;
+        UpdateFuelBar();
     }
 
     public override void _ExitTree()
