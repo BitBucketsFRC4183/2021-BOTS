@@ -22,6 +22,7 @@ position = Vector2( 133544, 72 )
 
 [node name="Target" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2344, -1952 )
+Velocity = Vector2( 0, 300 )
 
 [node name="Planet" parent="." instance=ExtResource( 4 )]
 position = Vector2( 267088, 72 )
