@@ -23,8 +23,11 @@ __meta__ = {
 }
 
 [node name="Shields" parent="Background" instance=ExtResource( 2 )]
-margin_left = 540.892
-margin_top = 246.85
-margin_right = -1229.11
-margin_bottom = -542.15
-rect_scale = Vector2( 2, 2 )
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -216.575
+margin_top = 203.288
+margin_right = -66.5766
+margin_bottom = 394.288
+rect_scale = Vector2( 2.5, 2.5 )
