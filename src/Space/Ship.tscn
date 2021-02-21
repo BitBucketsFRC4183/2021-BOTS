@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Space/Ship.cs" type="Script" id=1]
 [ext_resource path="res://assets/space/Ship.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/Space/Missile.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/TargetLockIndicator.png" type="Texture" id=8]
 [ext_resource path="res://assets/trace_05.png" type="Texture" id=9]
+[ext_resource path="res://src/Space/LaserBeam.cs" type="Script" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 32.0
@@ -29,9 +30,11 @@ MaxZoomVisible = 1e+07
 OverrideRotation = false
 BaseScale = Vector2( 0.125, 0.125 )
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="LaserBeam" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0 )
 width = 3.0
 default_color = Color( 0, 0.764706, 1, 1 )
+script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

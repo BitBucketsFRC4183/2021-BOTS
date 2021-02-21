@@ -19,12 +19,14 @@ config/icon="res://assets/project_icon.png"
 
 PlayerData="*res://src/Singletons/PlayerData.cs"
 Signals="*res://src/Singletons/Signals.cs"
-UpgradeCost="*res://src/Singletons/UpgradeCost.cs"
+SceneChanger="*res://src/SceneChanger.tscn"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
@@ -87,6 +89,11 @@ ship_land={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
+ship_fire_tertiary={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -97,6 +104,7 @@ ship_land={
 2d_physics/layer_5="aliens"
 2d_physics/layer_6="weapon-laser"
 2d_physics/layer_7="weapon-missile"
+2d_physics/layer_8="planet space shuttle"
 
 [physics]
 
