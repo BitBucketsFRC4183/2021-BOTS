@@ -2099,52 +2099,65 @@ tile_data = PoolIntArray( -131051, 11, 0 )
 [node name="Kamenium" parent="Resources" instance=ExtResource( 148 )]
 position = Vector2( 1087.93, 459.268 )
 scale = Vector2( 0.5, 0.5 )
+amount = 10
 
 [node name="Kamenium2" parent="Resources" instance=ExtResource( 148 )]
 position = Vector2( 926.296, 298.734 )
 scale = Vector2( 0.5, 0.5 )
+amount = 10
 
 [node name="Kamenium5" parent="Resources" instance=ExtResource( 148 )]
 position = Vector2( 1547.06, 141.758 )
 scale = Vector2( 0.5, 0.5 )
+amount = 10
 
 [node name="Kamenium3" parent="Resources" instance=ExtResource( 148 )]
 position = Vector2( 263.908, 513.98 )
 scale = Vector2( 0.5, 0.5 )
+amount = 10
 
 [node name="Kamenium4" parent="Resources" instance=ExtResource( 148 )]
 position = Vector2( 515.234, 826.231 )
 scale = Vector2( 0.5, 0.5 )
+amount = 10
 
 [node name="Coopertonium" parent="Resources" instance=ExtResource( 147 )]
 position = Vector2( 591.076, 473.287 )
 scale = Vector2( 0.5, 0.3 )
+amount = 10
 
 [node name="Coopertonium2" parent="Resources" instance=ExtResource( 147 )]
 position = Vector2( 360.109, 338.358 )
 scale = Vector2( 0.5, 0.3 )
+amount = 10
 
 [node name="Wooflowium" parent="Resources" instance=ExtResource( 149 )]
 position = Vector2( 646.262, 351.287 )
 scale = Vector2( 0.7, 0.85 )
+amount = 10
 
 [node name="Wooflowium2" parent="Resources" instance=ExtResource( 149 )]
 position = Vector2( 849.759, 1027.37 )
 scale = Vector2( 0.7, 0.85 )
+amount = 10
 
 [node name="Wooflowium3" parent="Resources" instance=ExtResource( 149 )]
 position = Vector2( 1207.98, 984.482 )
 scale = Vector2( 0.7, 0.85 )
+amount = 10
 
 [node name="Xerocrium" parent="Resources" instance=ExtResource( 17 )]
 position = Vector2( 30.0759, 909.404 )
 scale = Vector2( 0.5, 0.5 )
+amount = 10
 
 [node name="Efarcium" parent="Resources" instance=ExtResource( 151 )]
 position = Vector2( 276.517, 997.333 )
+amount = 10
 
 [node name="Graprofium" parent="Resources" instance=ExtResource( 150 )]
 position = Vector2( 620.017, 966.917 )
+amount = 10
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
 position = Vector2( 317.202, 553.005 )
