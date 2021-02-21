@@ -14,6 +14,8 @@ public class PlayerData : Node
     public ShipUpgrades shipUpgrades = new ShipUpgrades();
     public ShipUpgradeLevels shipLevels = new ShipUpgradeLevels();
 
+    public RoverFuelData roverFuel = new RoverFuelData();
+
     public static int MaxUpgradeLevel = 3;
 
     public bool ViewedStory = false;
