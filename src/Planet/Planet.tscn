@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=2]
+[gd_scene load_steps=155 format=2]
 
 [ext_resource path="res://src/Planet/Planet.cs" type="Script" id=1]
 [ext_resource path="res://assets/tilesets/iso_terrain.tres" type="TileSet" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/tilesets/iso_hangar.tres" type="TileSet" id=14]
 [ext_resource path="res://assets/spacekit/Isometric/terrain_roadCross_SW.png" type="Texture" id=15]
 [ext_resource path="res://assets/spacekit/Isometric/terrain_roadCross_SE.png" type="Texture" id=16]
-[ext_resource path="res://src/Planet/GameResource.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Resources/Xerocrium.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/spacekit/Isometric/rock_crystals_SW.png" type="Texture" id=18]
 [ext_resource path="res://assets/spacekit/Isometric/rocks_smallB_NE.png" type="Texture" id=19]
 [ext_resource path="res://assets/spacekit/Isometric/rock_largeB_SE.png" type="Texture" id=20]
@@ -146,8 +146,13 @@
 [ext_resource path="res://assets/spacekit/Isometric/terrain_SE.png" type="Texture" id=144]
 [ext_resource path="res://assets/spacekit/Isometric/terrain_side_SW.png" type="Texture" id=145]
 [ext_resource path="res://assets/spacekit/Isometric/terrain_sideCorner_SE.png" type="Texture" id=146]
+[ext_resource path="res://src/Resources/Coopertonium.tscn" type="PackedScene" id=147]
+[ext_resource path="res://src/Resources/Kamenium.tscn" type="PackedScene" id=148]
+[ext_resource path="res://src/Resources/Wooflowium.tscn" type="PackedScene" id=149]
+[ext_resource path="res://src/Resources/Graprofium.tscn" type="PackedScene" id=150]
+[ext_resource path="res://src/Resources/Efarcium.tscn" type="PackedScene" id=151]
 
-[sub_resource type="TileSet" id=3]
+[sub_resource type="TileSet" id=1]
 0/name = "terrain_NE"
 0/texture = ExtResource( 111 )
 0/tex_offset = Vector2( 0, 0 )
@@ -1384,7 +1389,7 @@ resource_local_to_scene = true
 31/shapes = [  ]
 31/z_index = 0
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=3]
 0/name = "rocket_baseA_NE"
 0/texture = ExtResource( 83 )
 0/tex_offset = Vector2( 0, 0 )
@@ -1965,7 +1970,7 @@ tile_data = PoolIntArray( -1048563, 0, 0, -1048562, 0, 0, -983028, 0, 0, -983027
 
 [node name="Terrain2" type="TileMap" parent="Tilemaps"]
 mode = 1
-tile_set = SubResource( 3 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 128, 64 )
 centered_textures = true
 collision_mask = 2
@@ -2071,7 +2076,7 @@ tile_data = PoolIntArray( 65563, 20, 0, 720897, 12, 0 )
 
 [node name="Rocket" type="TileMap" parent="Tilemaps/Rockets"]
 mode = 1
-tile_set = SubResource( 1 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 128, 64 )
 centered_textures = true
 collision_layer = 8
@@ -2091,65 +2096,55 @@ tile_data = PoolIntArray( -131051, 11, 0 )
 
 [node name="Resources" type="Node2D" parent="."]
 
-[node name="GameResource" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 339.033, 319.066 )
-amount = 5
+[node name="Kamenium" parent="Resources" instance=ExtResource( 148 )]
+position = Vector2( 1087.93, 459.268 )
+scale = Vector2( 0.5, 0.5 )
 
-[node name="GameResource2" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 155.508, 600.59 )
-amount = 5
+[node name="Kamenium2" parent="Resources" instance=ExtResource( 148 )]
+position = Vector2( 926.296, 298.734 )
+scale = Vector2( 0.5, 0.5 )
 
-[node name="GameResource3" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 291.508, 996.59 )
-amount = 5
+[node name="Kamenium5" parent="Resources" instance=ExtResource( 148 )]
+position = Vector2( 1547.06, 141.758 )
+scale = Vector2( 0.5, 0.5 )
 
-[node name="GameResource4" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 603.508, 956.59 )
-amount = 5
+[node name="Kamenium3" parent="Resources" instance=ExtResource( 148 )]
+position = Vector2( 263.908, 513.98 )
+scale = Vector2( 0.5, 0.5 )
 
-[node name="GameResource5" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 943.508, 266.59 )
-amount = 5
+[node name="Kamenium4" parent="Resources" instance=ExtResource( 148 )]
+position = Vector2( 515.234, 826.231 )
+scale = Vector2( 0.5, 0.5 )
 
-[node name="GameResource6" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 1511.51, 144.59 )
-amount = 5
+[node name="Coopertonium" parent="Resources" instance=ExtResource( 147 )]
+position = Vector2( 591.076, 473.287 )
+scale = Vector2( 0.5, 0.3 )
 
-[node name="GameResource7" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 1225.51, 520.59 )
-amount = 5
+[node name="Coopertonium2" parent="Resources" instance=ExtResource( 147 )]
+position = Vector2( 360.109, 338.358 )
+scale = Vector2( 0.5, 0.3 )
 
-[node name="GameResource8" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 1263.51, 994.59 )
-amount = 5
+[node name="Wooflowium" parent="Resources" instance=ExtResource( 149 )]
+position = Vector2( 646.262, 351.287 )
+scale = Vector2( 0.7, 0.85 )
 
-[node name="GameResource9" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 645.508, 334.59 )
-amount = 5
+[node name="Wooflowium2" parent="Resources" instance=ExtResource( 149 )]
+position = Vector2( 849.759, 1027.37 )
+scale = Vector2( 0.7, 0.85 )
 
-[node name="GameResource10" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 1077.51, 468.59 )
-amount = 5
+[node name="Wooflowium3" parent="Resources" instance=ExtResource( 149 )]
+position = Vector2( 1207.98, 984.482 )
+scale = Vector2( 0.7, 0.85 )
 
-[node name="GameResource11" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 599.508, 506.59 )
-amount = 5
+[node name="Xerocrium" parent="Resources" instance=ExtResource( 17 )]
+position = Vector2( 30.0759, 909.404 )
+scale = Vector2( 0.5, 0.5 )
 
-[node name="GameResource12" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 505.508, 854.59 )
-amount = 5
+[node name="Efarcium" parent="Resources" instance=ExtResource( 151 )]
+position = Vector2( 276.517, 997.333 )
 
-[node name="GameResource13" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 923.508, 1034.59 )
-amount = 5
-
-[node name="GameResource14" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 1177.51, 754.59 )
-amount = 5
-
-[node name="GameResource15" parent="Resources" instance=ExtResource( 17 )]
-position = Vector2( 59.5076, 900.59 )
-amount = 5
+[node name="Graprofium" parent="Resources" instance=ExtResource( 150 )]
+position = Vector2( 620.017, 966.917 )
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
 position = Vector2( 317.202, 553.005 )
@@ -2218,6 +2213,8 @@ position = Vector2( -20.1815, 104.271 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 90 )]
+margin_left = 1.12244
+margin_right = 1.12244
 
 [node name="Story" parent="CanvasLayer" instance=ExtResource( 91 )]
 
