@@ -18,6 +18,8 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
     [Export]
     public float MissileCooldown = 0.5f;
     [Export]
+    public float LaserRange = 4000;
+    [Export]
     public int ShieldStrength;
     [Export]
     public bool MissileHoming = false;
@@ -45,6 +47,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
     public PackedScene RailScene;
     private Sprite targetLockIndicator;
     private Sprite thrusterFlame;
+    private Line2D beam;
     private Camera2D activeCamera;
     private Timer laserCooldownTimer;
     private Timer railgunCooldownTimer;
@@ -65,6 +68,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
         targetLockIndicator = GetNode<Sprite>("LockIndicator");
         activeCamera = GetNode<Camera2D>("ShipCam");
         thrusterFlame = GetNode<Sprite>("ThrusterFlame");
+        beam = GetNode<Line2D>("LaserBeam");
         laserCooldownTimer = GetNode<Timer>("LaserCooldown");
         railgunCooldownTimer = GetNode<Timer>("RailgunCooldown");
         missileCooldownTimer = GetNode<Timer>("MissileCooldown");
@@ -152,6 +156,16 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
 
             }
         }
+        else if (Input.IsActionJustPressed("ship_fire_tertiary"))
+        {
+            if (WeaponTarget != null)
+            {
+                if (WeaponTarget.GlobalPosition.DistanceTo(GlobalPosition) <= LaserRange)
+                {
+                    FireWeapon(WeaponTarget, Weapon.Laser);
+                }
+            }
+        }
         if (Input.IsActionJustPressed("ship_target_lock"))
         {
             Godot.Collections.Array lockables = GetTree().GetNodesInGroup("Lockables");
@@ -198,6 +212,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
         {
             if (target is SpaceDamagable damagable)
             {
+                beam.AddPoint(target.GlobalPosition - GlobalPosition);
                 damagable.Hit();
                 CanLaserFire = false;
                 laserCooldownTimer.Start(LaserCooldown);
@@ -314,6 +329,7 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
 
     public void OnLaserCooldownFinished()
     {
+        beam.RemovePoint(1);
         CanLaserFire = true;
     }
 
