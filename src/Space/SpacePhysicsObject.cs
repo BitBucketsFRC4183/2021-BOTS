@@ -20,6 +20,10 @@ public class SpacePhysicsObject : KinematicBody2D
         KinematicCollision2D collision = MoveAndCollide(Velocity);
         if (collision != null)
         {
+            if (collision.Collider is SpacePhysicsObject spacePhysicsObject)
+            {
+                spacePhysicsObject.OnCollision(this);
+            }
             OnCollision((Node2D)collision.Collider);
         }
     }
