@@ -128,9 +128,16 @@ public class Player : KinematicBody2D
 
         MoveAndCollide(motion);
 
-        Position = new Vector2(
-                        Mathf.Clamp(Position.x, 0, GetViewportRect().Size.x),
-                        Mathf.Clamp(Position.y, 0, GetViewportRect().Size.y)
-                    );
+        Vector2 target = new Vector2(
+            Mathf.Clamp(Position.x, 0, GetViewportRect().Size.x),
+            Mathf.Clamp(Position.y, 0, GetViewportRect().Size.y)
+        );
+
+        if ((int) target.x != (int) Position.x || (int) target.y != (int) Position.y) PlayerData.Instance.roverFuel.UseFuel();
+        else PlayerData.Instance.roverFuel.RegenFuel();
+        
+        Signals.PublishRoverFuelChangedEvent();
+
+        Position = target;
     }
 }

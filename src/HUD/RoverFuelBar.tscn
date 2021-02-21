@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/HUD/RoverFuelBar.cs" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Orbitron Medium.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="RoverFuelBar" type="Control"]
+anchor_right = 0.357
+anchor_bottom = 0.124
+margin_right = -0.440063
+margin_bottom = 0.0799866
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+text = "Fuel"
+align = 1
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -71.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
