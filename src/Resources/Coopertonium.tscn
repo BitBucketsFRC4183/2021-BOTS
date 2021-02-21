@@ -34,3 +34,6 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.368958, -37.4031 )
 shape = SubResource( 4 )
+
+[connection signal="body_entered" from="." to="." method="_on_GameResource_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_GameResource_body_exited"]
