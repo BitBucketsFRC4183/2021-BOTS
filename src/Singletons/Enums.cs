@@ -22,6 +22,7 @@ public class Enums
     {
         SHIELDS,
         TANK,
+        SPEED,
         NULL
     }
 

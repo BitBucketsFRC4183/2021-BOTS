@@ -59,6 +59,13 @@ public class ShipUpgrades
         new Upgrade("Tank T3", new InventoryResources(){Graprofium = 100, Kamenium = 200})
     };
 
+    public static Upgrade[] Speed { get; } =
+    {
+        new Upgrade("Speed T1", new InventoryResources() {Graprofium = 10}),
+        new Upgrade("Speed T2", new InventoryResources() {Graprofium = 50, Kamenium = 200}),
+        new Upgrade("Speed T3", new InventoryResources() {Graprofium = 100, Kamenium = 200})
+    };
+
     public Upgrade[] this[Enums.ShipUpgradeType index]
     {
         get
