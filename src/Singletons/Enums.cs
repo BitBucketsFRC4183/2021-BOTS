@@ -21,6 +21,7 @@ public class Enums
     public enum ShipUpgradeType
     {
         SHIELDS,
+        TANK,
         NULL
     }
 

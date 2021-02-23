@@ -65,6 +65,8 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        Signals.UpgradesChanged += UpdateMaxFuel;
+        
         targetLockIndicator = GetNode<Sprite>("LockIndicator");
         activeCamera = GetNode<Camera2D>("ShipCam");
         thrusterFlame = GetNode<Sprite>("ThrusterFlame");
@@ -181,6 +183,19 @@ public class Ship : SpacePhysicsObject, SpaceDamagable
             thrusterFlame.Visible = false;
         }
     }
+
+    public override void _ExitTree()
+    {
+        Signals.UpgradesChanged -= UpdateMaxFuel;
+    }
+
+    private void UpdateMaxFuel()
+    {
+        float initMaxFuel = MaxFuel;
+        MaxFuel = (PlayerData.Instance.shipLevels[Enums.ShipUpgradeType.TANK] + 1) * 100;
+        if ((int) MaxFuel != (int) initMaxFuel) Fuel = MaxFuel;
+    }
+
     public void FireWeapon(Destroyable target, Weapon weapon)
     {
         if (weapon == Weapon.Missile && CanMissileFire)
