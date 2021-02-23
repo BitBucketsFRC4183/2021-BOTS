@@ -73,6 +73,8 @@ public class ShipUpgrades
             switch (index)
             {
                 case Enums.ShipUpgradeType.SHIELDS: return Shields;
+		case Enums.ShipUpgradeType.TANK: return Tank;
+		case Enums.ShipUpgradeType.SPEED: return Speed;
                 default: throw new IndexOutOfRangeException($"Index {index} out of range for {this.GetType().ToString()}");
             }
         }
