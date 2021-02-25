@@ -1,13 +1,24 @@
 using Godot;
 using System;
 
-public class Asteroids : RigidBody2D
+public class Asteroids : SpacePhysicsObject, SpaceDamagable, Destroyable
 {
+    public event Action Destroyed;
 
+    public void Hit()
+    {
+        Destroyed?.Invoke();
+        QueueFree();
+    }
 
+    public override void OnCollision(Node2D body)
+    {
+        Hit();
+    }
 
     public override void _PhysicsProcess(float delta)
     {
-        ApplyTorqueImpulse(100);
+        base._PhysicsProcess(delta);
+        Rotate(0.5f * delta);
     }
 }
