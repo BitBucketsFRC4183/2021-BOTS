@@ -22,7 +22,7 @@ public class Planet : Node2D
 
 		if (!PlayerData.Instance.ViewedStory) {
 			story.PopupCentered();
-			PlayerData.Instance.ViewedStory = false;
+			PlayerData.Instance.ViewedStory = true;
 			GD.Print("Story is popped");
 		}
 
