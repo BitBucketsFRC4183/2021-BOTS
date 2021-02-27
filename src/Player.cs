@@ -104,6 +104,12 @@ public class Player : KinematicBody2D
     {
         Vector2 direction = new Vector2();
 
+        if (PlayerData.Instance.roverFuel.CurrentFuel == 0)
+        {
+            PlayerData.Instance.roverFuel.RegenFuel();
+            return;
+        }
+
         // Note: right now only 4-direction movement is implemented because 
         // we don't have sprites for 8-directional and it looks confusing
         // to re-add 8-direction, simlpy make all of these "+="
@@ -128,9 +134,16 @@ public class Player : KinematicBody2D
 
         MoveAndCollide(motion);
 
-        Position = new Vector2(
-                        Mathf.Clamp(Position.x, 0, GetViewportRect().Size.x),
-                        Mathf.Clamp(Position.y, 0, GetViewportRect().Size.y)
-                    );
+        Vector2 target = new Vector2(
+            Mathf.Clamp(Position.x, 0, GetViewportRect().Size.x),
+            Mathf.Clamp(Position.y, 0, GetViewportRect().Size.y)
+        );
+        
+        if (direction == Vector2.Up || direction == Vector2.Down || direction == Vector2.Left || direction == Vector2.Right) PlayerData.Instance.roverFuel.UseFuel();
+        else PlayerData.Instance.roverFuel.RegenFuel();
+
+        Signals.PublishRoverFuelChangedEvent();
+
+        Position = target;
     }
 }

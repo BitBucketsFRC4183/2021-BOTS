@@ -47,9 +47,23 @@ public class ShipUpgrades
 {
     public static Upgrade[] Shields { get; } =
     {
-        new Upgrade("Ship Shields T1", new InventoryResources{Graprofium = 10}),
-        new Upgrade("Ship Shields T2", new InventoryResources{Graprofium = 50, Kamenium = 100}),
-        new Upgrade("Ship Shields T3", new InventoryResources{Graprofium = 100, Kamenium = 100, Wooflowium = 250})
+        new Upgrade("Shields T1", new InventoryResources{Graprofium = 10}),
+        new Upgrade("Shields T2", new InventoryResources{Graprofium = 50, Kamenium = 100}),
+        new Upgrade("Shields T3", new InventoryResources{Graprofium = 100, Kamenium = 100, Wooflowium = 250})
+    };
+
+    public static Upgrade[] Tank { get; } =
+    {
+        new Upgrade("Tank T1", new InventoryResources(){Graprofium = 10}),
+        new Upgrade("Tank T2", new InventoryResources(){Graprofium = 50, Kamenium = 200}),
+        new Upgrade("Tank T3", new InventoryResources(){Graprofium = 100, Kamenium = 200})
+    };
+
+    public static Upgrade[] Speed { get; } =
+    {
+        new Upgrade("Speed T1", new InventoryResources() {Graprofium = 10}),
+        new Upgrade("Speed T2", new InventoryResources() {Graprofium = 50, Kamenium = 200}),
+        new Upgrade("Speed T3", new InventoryResources() {Graprofium = 100, Kamenium = 200})
     };
 
     public Upgrade[] this[Enums.ShipUpgradeType index]
@@ -59,6 +73,8 @@ public class ShipUpgrades
             switch (index)
             {
                 case Enums.ShipUpgradeType.SHIELDS: return Shields;
+		case Enums.ShipUpgradeType.TANK: return Tank;
+		case Enums.ShipUpgradeType.SPEED: return Speed;
                 default: throw new IndexOutOfRangeException($"Index {index} out of range for {this.GetType().ToString()}");
             }
         }

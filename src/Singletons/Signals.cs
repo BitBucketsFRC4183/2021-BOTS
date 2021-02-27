@@ -12,6 +12,7 @@ public class Signals : Node
     [Signal] public delegate void NotCollectingResource();
 
     public static event Action UpgradesChanged;
+    public static event Action RoverFuelChanged;
 
     public override void _Ready()
     {
@@ -21,5 +22,10 @@ public class Signals : Node
     public static void PublishUpgradesChangedEvent()
     {
         UpgradesChanged?.Invoke();
+    }
+
+    public static void PublishRoverFuelChangedEvent()
+    {
+        RoverFuelChanged?.Invoke();
     }
 }

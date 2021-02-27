@@ -14,6 +14,8 @@ public class PlayerData : Node
     public ShipUpgrades shipUpgrades = new ShipUpgrades();
     public ShipUpgradeLevels shipLevels = new ShipUpgradeLevels();
 
+    public RoverFuelData roverFuel = new RoverFuelData();
+
     public static int MaxUpgradeLevel = 3;
 
     public bool ViewedStory = false;
@@ -56,9 +58,7 @@ public class PlayerData : Node
 
     public Upgrade GetUpgrade(Enums.RoverUpgradeType rover, Enums.ShipUpgradeType ship)
     {
-        Upgrade[] uT = rover != Enums.RoverUpgradeType.NULL ? roverUpgrades[rover] : shipUpgrades[ship];
-        Upgrade u = rover != Enums.RoverUpgradeType.NULL ? uT[roverLevels[rover]] : uT[shipLevels[ship]];
-        return u;
+        return rover != Enums.RoverUpgradeType.NULL ? roverUpgrades[rover][roverLevels[rover]] : shipUpgrades[ship][shipLevels[ship]];
     }
 
 }

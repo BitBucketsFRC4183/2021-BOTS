@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/HUD/ResourceCollectBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/HUD/RoverFuelBar.tscn" type="PackedScene" id=2]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -17,3 +18,9 @@ margin_top = 926.379
 margin_right = 1170.53
 margin_bottom = 1005.54
 rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="RoverFuelBar" parent="." instance=ExtResource( 2 )]
+margin_left = 18.0114
+margin_top = 927.588
+margin_right = 17.5714
+margin_bottom = 927.668
